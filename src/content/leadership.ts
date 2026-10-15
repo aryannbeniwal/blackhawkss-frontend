@@ -15,7 +15,7 @@ export const leaders: Leader[] = [
     focusAreas: ["Security operations", "Supervision and site standards", "Personnel mentorship", "Accountability and alertness"],
     quote: "Security is not just a service; it is a commitment to protection born from years of serving the nation.",
     contactId: "sandeep",
-    portrait: { src: "/images/portrait-sandeep.jpg", alt: "Sandeep Beniwal, co-founder of Black Hawk Security Solution, at PRISMA Fest 2026" },
+    portrait: { src: "/images/portrait-sandeep.jpg", alt: "Sandeep Beniwal, co-founder of Black Hawk Security Solution" },
   },
   {
     id: "aryan",
