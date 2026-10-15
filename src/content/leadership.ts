@@ -22,9 +22,9 @@ export const leaders: Leader[] = [
     name: "Aryan Beniwal",
     title: "Technology & Business Development Leader",
     shortBio:
-      "B.Tech in Computer Science and Engineering specialising in Cloud Engineering and Cloud Automation, and a Software Engineer by profession. He runs the business side and the digital operations.",
+      "B.Tech graduate and a Software Engineer by profession. He runs the business side and the digital operations.",
     bio: [
-      "Aryan Beniwal is a B.Tech graduate in Computer Science and Engineering, specialising in Cloud Engineering and Cloud Automation, and works as a Software Engineer. During university he served as a Senior Under Officer in the National Cadet Corps.",
+      "Aryan Beniwal is a B.Tech graduate and works as a Software Engineer. During university he served as a Senior Under Officer in the National Cadet Corps.",
       "His background spans software engineering, team coordination, management, event organisation and digital operations. He brings a modern approach to how the business communicates with customers, plans deployments and keeps records.",
       "At Black Hawk he leads business development, customer communication, process improvement and the company's digital presence, so that enquiries, quotations and coordination run on clear systems rather than memory.",
     ],
