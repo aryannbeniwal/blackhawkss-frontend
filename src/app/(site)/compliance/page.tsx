@@ -12,7 +12,7 @@ export const metadata = buildMetadata({ ...pageSeo.compliance, path: "/complianc
 const items = [
   { icon: ShieldCheck, title: "Licensed security agency", value: "Licence details available on request", note: "Shared with clients during onboarding and on quotation documents." },
   { icon: Landmark, title: "GST registration", value: site.gstin, note: "All invoices are GST invoices issued under this registration (State: Haryana, code 06)." },
-  { icon: FileText, title: "PAN", value: site.pan, note: "Partnership firm — Sandeep Beniwal and Aryan Beniwal." },
+  { icon: FileText, title: "PAN & registration documents", value: "Shared on request for vendor onboarding", note: "Firm registered in the names of Sandeep Beniwal and Aryan Beniwal. Copies are sent to clients during onboarding, not published here." },
   { icon: BadgeCheck, title: "Registered office", value: site.address.display, note: "Service coverage across Haryana and Delhi NCR." },
 ];
 
