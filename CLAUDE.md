@@ -17,7 +17,7 @@ npm run typegen      # regenerate route types after adding routes (PageProps/Lay
 ## Layout
 - `src/app/(site)/*` public pages (static, prerendered). `src/app/admin/*` owner panel (client components + react-query). `src/app/api/backend/[...path]` proxies to the Spring backend and injects the admin JWT from httpOnly cookies. `src/app/api/auth/*` login/logout/session. `src/proxy.ts` guards `/admin`.
 - `src/content/*` is the single source of truth for copy and verified facts (`site.ts`: contacts, address, GSTIN; `services.ts`, `industries.ts`, `clients.ts`, `cities.ts`, `leadership.ts`, `legal.ts`, `seo.ts`, `careers.ts`). Edit copy there, not in components.
-- `src/components/site` shared site chrome (Header, Footer, FloatingActions, CallSheet, SectionHeading, Reveal, CtaBand…), `src/components/home` home sections, `src/components/forms` quote/contact/application forms, `src/components/brand` logo/hawk watermark/claw accent, `src/components/admin` panel widgets.
+- `src/components/site` shared site chrome (Header, Footer, FloatingActions, CallSheet, SectionHeading, Reveal, CtaBand…), `src/components/home` home sections, `src/components/forms` quote/contact/application forms, `src/components/brand` logo/hawk watermark/eyebrow rule accent (ClawMark), `src/components/admin` panel widgets.
 - `src/lib/seo.ts` metadata + JSON-LD builders (verified fields only). `src/lib/whatsapp.ts` wa.me/tel links. `src/lib/analytics.ts` conversion events (`quote_submit`, `whatsapp_click`, `call_click`, …).
 
 ## Rules (from the owners' brief)
