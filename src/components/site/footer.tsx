@@ -1,8 +1,9 @@
 import { Mail, MapPin, Phone } from "lucide-react";
+import { InstagramIcon } from "@/components/brand/instagram-icon";
 import Link from "next/link";
 import { Logo } from "@/components/brand/logo";
 import { CopyrightYear } from "@/components/site/copyright-year";
-import { contacts, nav, site } from "@/content/site";
+import { contacts, nav, site, socialLinks } from "@/content/site";
 import { services } from "@/content/services";
 import { mailtoLink, telLink } from "@/lib/whatsapp";
 
@@ -20,6 +21,21 @@ export function Footer() {
             {["Licensed", "GST registered", "Veteran-led"].map((t) => (
               <li key={t} className="rounded-full border border-brand-gold/30 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-wider text-brand-gold">
                 {t}
+              </li>
+            ))}
+          </ul>
+          <ul className="mt-5 flex gap-2">
+            {socialLinks.map((s) => (
+              <li key={s.id}>
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer me"
+                  aria-label={`${site.shortName} on ${s.label}`}
+                  className="inline-flex size-10 items-center justify-center rounded-full border border-border text-foreground/80 transition hover:border-brand-gold hover:text-brand-gold"
+                >
+                  <InstagramIcon className="size-5" />
+                </a>
               </li>
             ))}
           </ul>

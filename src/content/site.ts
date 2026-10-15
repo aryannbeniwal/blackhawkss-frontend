@@ -41,10 +41,12 @@ export const site = {
 
 /** Public social profiles. Add real URLs when the pages exist; empty entries are omitted from structured data. */
 export const social: readonly string[] = [
-  // "https://www.instagram.com/blackhawkss.in",
-  // "https://www.facebook.com/blackhawkss.in",
-  // "https://www.linkedin.com/company/blackhawkss",
+  "https://www.instagram.com/blackhawk.solutions/",
+  // "https://www.facebook.com/…",
+  // "https://www.linkedin.com/company/…",
 ];
+
+export const socialLinks = [{ id: "instagram", label: "Instagram", url: "https://www.instagram.com/blackhawk.solutions/" }] as const;
 /** Twitter/X handle without @, or null. */
 export const twitterHandle: string | null = null;
 

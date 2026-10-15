@@ -105,7 +105,7 @@ export function organizationNode(): Node {
       { "@type": "Person", "@id": `${SITE_URL}/about#aryan`, name: "Aryan Beniwal" },
     ],
     vatID: site.gstin,
-    ...(social.length ? { sameAs: [...social] } : {}),
+    sameAs: [...social, site.mapsShareUrl],
   };
 }
 
