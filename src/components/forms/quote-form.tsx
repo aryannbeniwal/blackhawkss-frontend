@@ -359,7 +359,7 @@ export function QuoteForm({ defaultService, compact = false }: { defaultService?
             <div>
               <FieldLabel htmlFor="consent" className="font-normal">
                 I agree to be contacted by Black Hawk Security Solution about this enquiry and have read the{" "}
-                <Link href="/privacy" className="text-brand-gold underline-offset-2 hover:underline">
+                <Link href="/privacy" className="text-brand-gold underline underline-offset-2">
                   privacy policy
                 </Link>
                 .

@@ -12,8 +12,8 @@ export function HawkMark({ className, tone = "gold" }: { className?: string; ton
       className={cn("pointer-events-none absolute select-none", className)}
       style={{
         backgroundColor: color,
-        WebkitMaskImage: "url(/brand/black-hawk-logo-mono.png)",
-        maskImage: "url(/brand/black-hawk-logo-mono.png)",
+        WebkitMaskImage: "url(/brand/black-hawk-logo-mask.png)",
+        maskImage: "url(/brand/black-hawk-logo-mask.png)",
         WebkitMaskRepeat: "no-repeat",
         maskRepeat: "no-repeat",
         WebkitMaskSize: "contain",

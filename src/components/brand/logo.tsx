@@ -38,7 +38,7 @@ export function Logo({ size = 44, withWordmark = true, className, href = "/", pr
   );
   if (!href) return inner;
   return (
-    <Link href={href} aria-label={`${site.name} — home`} className="rounded-md outline-none focus-visible:ring-2 focus-visible:ring-brand-gold">
+    <Link href={href} className="rounded-md outline-none focus-visible:ring-2 focus-visible:ring-brand-gold">
       {inner}
     </Link>
   );

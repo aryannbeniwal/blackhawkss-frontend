@@ -26,11 +26,11 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-2">
-          <h3 className="font-display text-sm uppercase tracking-[0.2em] text-brand-gold">Services</h3>
-          <ul className="mt-4 space-y-2 text-sm">
+          <h2 className="font-display text-sm uppercase tracking-[0.2em] text-brand-gold">Services</h2>
+          <ul className="mt-3 space-y-1 text-sm">
             {services.map((s) => (
               <li key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="text-foreground/80 transition hover:text-brand-gold">
+                <Link href={`/services/${s.slug}`} className="inline-block py-1 text-foreground/80 transition hover:text-brand-gold">
                   {s.name}
                 </Link>
               </li>
@@ -39,24 +39,24 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-2">
-          <h3 className="font-display text-sm uppercase tracking-[0.2em] text-brand-gold">Company</h3>
-          <ul className="mt-4 space-y-2 text-sm">
+          <h2 className="font-display text-sm uppercase tracking-[0.2em] text-brand-gold">Company</h2>
+          <ul className="mt-3 space-y-1 text-sm">
             {nav
               .filter((n) => n.href !== "/")
               .map((n) => (
                 <li key={n.href}>
-                  <Link href={n.href} className="text-foreground/80 transition hover:text-brand-gold">
+                  <Link href={n.href} className="inline-block py-1 text-foreground/80 transition hover:text-brand-gold">
                     {n.label}
                   </Link>
                 </li>
               ))}
             <li>
-              <Link href="/compliance" className="text-foreground/80 transition hover:text-brand-gold">
+              <Link href="/compliance" className="inline-block py-1 text-foreground/80 transition hover:text-brand-gold">
                 Compliance
               </Link>
             </li>
             <li>
-              <Link href="/quote" className="font-semibold text-brand-red transition hover:text-brand-gold">
+              <Link href="/quote" className="inline-block py-1 font-semibold text-brand-gold underline underline-offset-4 transition hover:text-brand-gold-soft">
                 Request a Quote
               </Link>
             </li>
@@ -64,7 +64,7 @@ export function Footer() {
         </div>
 
         <div className="md:col-span-4">
-          <h3 className="font-display text-sm uppercase tracking-[0.2em] text-brand-gold">Contact</h3>
+          <h2 className="font-display text-sm uppercase tracking-[0.2em] text-brand-gold">Contact</h2>
           <ul className="mt-4 space-y-3 text-sm">
             {contacts.map((c) => (
               <li key={c.id} className="flex items-start gap-3">

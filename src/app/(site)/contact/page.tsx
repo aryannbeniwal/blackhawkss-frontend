@@ -75,7 +75,7 @@ export default function ContactPage() {
         <div className="rounded-2xl border border-border bg-card p-5 sm:p-8 lg:col-span-7">
           <h2 className="display-md">Send a message</h2>
           <p className="mt-2 mb-6 text-sm text-muted-foreground">
-            For deployment enquiries, the <a href="/quote" className="text-brand-gold hover:underline">quote form</a> is faster.
+            For deployment enquiries, the <a href="/quote" className="text-brand-gold underline underline-offset-2">quote form</a> is faster.
           </p>
           <ContactForm />
         </div>

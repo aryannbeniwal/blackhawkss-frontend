@@ -20,6 +20,12 @@ export function Hero() {
     animate: { opacity: 1, y: 0 },
     transition: { duration: 0.7, ease, delay: reduce ? 0 : delay },
   });
+  // The headline is the LCP element: it must paint immediately (opacity stays 1), so it only rises slightly.
+  const rise = {
+    initial: { y: reduce ? 0 : 14 },
+    animate: { y: 0 },
+    transition: { duration: 0.6, ease },
+  };
 
   return (
     <section className="relative isolate overflow-hidden bg-brand-black">
@@ -40,11 +46,11 @@ export function Hero() {
       <HawkMark className="-left-24 top-1/2 h-[26rem] w-[26rem] -translate-y-1/2 opacity-[0.05] sm:h-[34rem] sm:w-[34rem]" tone="gold" />
 
       <div className="container-x relative flex min-h-[calc(100svh-4.5rem)] flex-col justify-center pb-20 pt-32 sm:pb-24 sm:pt-40">
-        <motion.p {...fade(0)} className="eyebrow">
+        <motion.p {...rise} className="eyebrow">
           <ClawMark />
           {site.serviceArea} · Licensed security agency
         </motion.p>
-        <motion.h1 {...fade(0.08)} className="display-xl mt-5 max-w-4xl text-balance">
+        <motion.h1 {...rise} className="display-xl mt-5 max-w-4xl text-balance">
           Security Built on <span className="text-brand-gold">Discipline.</span>
           <br />
           Service Driven by <span className="text-brand-gold">Trust.</span>

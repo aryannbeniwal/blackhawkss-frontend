@@ -23,7 +23,7 @@ export function FloatingActions() {
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => track("whatsapp_click", { placement: "fab" })}
-        aria-label="Chat with us on WhatsApp"
+        aria-label="WhatsApp us"
         className="fixed bottom-6 right-5 z-40 hidden items-center gap-2 rounded-full bg-[#25D366] py-3 pl-3 pr-4 text-sm font-semibold text-black shadow-lg shadow-black/40 transition hover:brightness-110 focus-visible:ring-2 focus-visible:ring-brand-gold sm:inline-flex"
       >
         <MessageCircle className="size-5" />

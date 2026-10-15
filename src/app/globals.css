@@ -177,7 +177,7 @@
     @apply font-display text-4xl leading-[1] font-bold uppercase tracking-tight sm:text-5xl;
   }
   .display-md {
-    @apply font-display text-2xl leading-tight font-semibold uppercase tracking-tight sm:text-3xl;
+    @apply font-display text-2xl leading-tight font-bold uppercase tracking-tight sm:text-3xl;
   }
   .lead {
     @apply text-base leading-relaxed text-muted-foreground sm:text-lg;

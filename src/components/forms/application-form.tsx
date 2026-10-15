@@ -160,7 +160,7 @@ export function ApplicationForm() {
         )} />
       </FieldGroup>
       <p className="text-xs text-muted-foreground">
-        By applying you agree we may contact you about work opportunities. See our <a href="/privacy" className="text-brand-gold hover:underline">privacy policy</a>.
+        By applying you agree we may contact you about work opportunities. See our <a href="/privacy" className="text-brand-gold underline underline-offset-2">privacy policy</a>.
       </p>
       <Button type="submit" size="lg" disabled={form.formState.isSubmitting} className="h-12 bg-brand-red px-8 text-base font-semibold uppercase tracking-wider text-white hover:bg-brand-red-deep">
         {form.formState.isSubmitting ? <><Loader2 className="size-5 animate-spin" /> Sending…</> : "Submit application"}
