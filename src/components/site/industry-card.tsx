@@ -5,7 +5,7 @@ export function IndustryCard({ industry }: { industry: Industry }) {
   return (
     <Link
       href={`/industries#${industry.slug}`}
-      className="card-lift group flex items-start gap-4 rounded-xl border border-border bg-card/60 p-5 transition hover:border-brand-gold/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
+      className="card-lift group flex h-full items-start gap-4 rounded-xl border border-border bg-card/60 p-5 transition hover:border-brand-gold/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold"
     >
       <span className="inline-flex size-11 shrink-0 items-center justify-center rounded-lg bg-brand-steel text-brand-gold">
         <industry.icon className="size-5" />

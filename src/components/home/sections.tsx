@@ -67,7 +67,7 @@ export function IndustriesSection() {
       </Reveal>
       <RevealGroup className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {industries.map((ind) => (
-          <RevealItem key={ind.slug}>
+          <RevealItem key={ind.slug} className="h-full">
             <IndustryCard industry={ind} />
           </RevealItem>
         ))}
