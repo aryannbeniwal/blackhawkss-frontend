@@ -17,7 +17,7 @@ export function LeadershipPreview() {
             lead="Military discipline meets modern thinking — united by a commitment to professional security."
           />
           <Link href="/about" className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.18em] text-brand-gold link-underline">
-            Meet the partners <ArrowRight className="size-4" />
+            Meet the founders <ArrowRight className="size-4" />
           </Link>
         </Reveal>
         <div className="grid gap-5 sm:grid-cols-2 lg:col-span-7">
@@ -35,7 +35,7 @@ export function LeadershipPreview() {
                 </div>
                 <p className="eyebrow mt-5">
                   <ClawMark />
-                  Partner
+                  Co-Founder
                 </p>
                 <h3 className="mt-2 font-display text-2xl font-semibold uppercase tracking-wide">{l.name}</h3>
                 <p className="text-sm font-medium text-brand-gold/90">{l.title}</p>

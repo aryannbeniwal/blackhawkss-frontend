@@ -60,7 +60,7 @@ export default function LoginPage() {
       <div className="relative w-full max-w-sm rounded-2xl border border-border bg-card p-8 shadow-2xl shadow-black/60">
         <Logo size={48} href="/" />
         <h1 className="mt-6 font-display text-2xl font-semibold uppercase tracking-wide">Owner panel</h1>
-        <p className="mt-1 text-sm text-muted-foreground">Restricted to Black Hawk Security Solution partners.</p>
+        <p className="mt-1 text-sm text-muted-foreground">Restricted to the owners of Black Hawk Security Solution.</p>
         <div className="mt-6">
           <Suspense>
             <LoginForm />

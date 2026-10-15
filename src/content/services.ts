@@ -1,4 +1,4 @@
-import { ClipboardCheck, Flower2, HardHat, ShieldCheck, UserCheck, Users } from "lucide-react";
+import { ClipboardCheck, Sparkles, HardHat, ShieldCheck, UserCheck, Users } from "lucide-react";
 
 import type { Service, ServiceCategory, ServiceSlug } from "./types";
 
@@ -252,23 +252,24 @@ export const services: Service[] = [
     },
   },
   {
-    slug: "gardeners-maids",
-    category: "GARDENERS_MAIDS",
-    name: "Gardeners & Maids",
-    title: "Gardeners & Domestic Support",
-    summary: "Gardening and domestic support staffing for homes, farmhouses, societies and institutions.",
+    slug: "housekeeping-services",
+    category: "HOUSEKEEPING",
+    name: "Housekeeping Services",
+    title: "Housekeeping Services",
+    summary: "Housekeeping staff, gardeners and domestic support for homes, farmhouses, societies, offices and institutions.",
     intro:
-      "A separate line from our security work: gardeners, maids and domestic support staff for households, farmhouses and residential societies. Personnel are document-verified and arranged through the same office so you deal with one accountable team.",
+      "A separate line from our security work: housekeeping staff, gardeners, maids and domestic support for households, farmhouses, residential societies, offices and institutions. Personnel are document-verified and arranged through the same office so you deal with one accountable team.",
     tone: "support",
-    icon: Flower2,
+    icon: Sparkles,
     image: null,
     whoItsFor: [
-      "Households and farmhouses needing regular gardening or domestic help",
-      "Residential societies maintaining common gardens and lawns",
-      "Institutions and offices with grounds to maintain",
-      "Guest houses and small hospitality properties",
+      "Households and farmhouses needing regular housekeeping, gardening or domestic help",
+      "Residential societies maintaining common areas, gardens and lawns",
+      "Offices, institutions and small hospitality properties with daily upkeep",
+      "Guest houses and venues needing cleaning staff around events",
     ],
     included: [
+      "Housekeeping staff for daily cleaning and upkeep",
       "Gardeners for lawns, plants and grounds maintenance",
       "Maids and domestic support staff on agreed schedules",
       "Document verification before placement",
@@ -282,20 +283,21 @@ export const services: Service[] = [
       "Our office stays reachable for changes or replacements.",
     ],
     useCases: [
+      { title: "Office upkeep", text: "Housekeeping staff on a daily morning schedule for an office or showroom in Panipat." },
       { title: "Farmhouse grounds", text: "A gardener on a weekly schedule for lawns and plantation around a farmhouse near Samalkha." },
-      { title: "Society common areas", text: "Gardening staff for a society's green areas on fixed days." },
+      { title: "Society common areas", text: "Housekeeping and gardening staff for a society's lobbies, corridors and green areas on fixed days." },
       { title: "Household support", text: "A verified maid for daily domestic work on agreed hours." },
     ],
     faqs: [
       { q: "Is this part of your security service?", a: "No. It is a separate support staffing service handled by the same office, with the same verification standard." },
-      { q: "Can I request part-time help?", a: "Yes. Part-time and fixed-day arrangements are common for gardening and domestic work." },
+      { q: "Can I request part-time help?", a: "Yes. Part-time and fixed-day arrangements are common for housekeeping, gardening and domestic work." },
       { q: "Are staff verified?", a: "Identity and address documents are checked before placement." },
     ],
     quoteHints: ["Type of work", "Days and hours", "Location", "Start date"],
     seo: {
-      title: "Gardeners & Maids in Panipat and Samalkha",
-      description: "Verified gardeners and domestic support staff for homes, farmhouses and societies in Panipat, Samalkha and nearby areas. Arranged through one accountable office.",
-      keywords: ["gardener services Panipat", "maid services Samalkha", "domestic help Panipat"],
+      title: "Housekeeping Services in Panipat and Samalkha",
+      description: "Verified housekeeping staff, gardeners and domestic support for homes, offices, farmhouses and societies in Panipat, Samalkha and nearby areas. Arranged through one accountable office.",
+      keywords: ["housekeeping services Panipat", "housekeeping staff Samalkha", "gardener services Panipat", "maid services Samalkha", "domestic help Panipat"],
     },
   },
 ];
@@ -312,7 +314,7 @@ export const serviceCategoryOptions: { value: ServiceCategory; label: string }[]
   { value: "PERSONAL_SECURITY_OFFICERS", label: "Personal Security Officers" },
   { value: "SECURITY_SUPERVISORS", label: "Security Supervisors" },
   { value: "MANPOWER_SUPPLY", label: "Manpower Supply" },
-  { value: "GARDENERS_MAIDS", label: "Gardeners & Maids" },
+  { value: "HOUSEKEEPING", label: "Housekeeping Services" },
   { value: "OTHER", label: "Other Enquiry" },
 ];
 

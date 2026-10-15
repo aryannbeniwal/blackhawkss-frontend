@@ -18,10 +18,10 @@ export const industries: Industry[] = [
     name: "Residential Societies",
     summary: "Gated communities, apartment towers and housing societies managing residents, visitors and vehicles.",
     description:
-      "Society security is daily and visible. Residents expect courteous guards who know the rules, log visitors properly and coordinate with the society office. We also place gardeners for common green areas through the same office.",
+      "Society security is daily and visible. Residents expect courteous guards who know the rules, log visitors properly and coordinate with the society office. We also place housekeeping staff and gardeners for common areas through the same office.",
     icon: Home,
     typicalNeeds: ["Main gate manning and visitor logging", "Night patrol rounds", "Coordination with the society office", "Garden and common-area staff"],
-    relatedServices: ["security-guards", "security-supervisors", "gardeners-maids"],
+    relatedServices: ["security-guards", "security-supervisors", "housekeeping-services"],
   },
   {
     slug: "educational-institutions",

@@ -13,7 +13,7 @@ export const whyBlackHawk: { title: string; text: string; icon: LucideIcon }[] =
   },
   {
     title: "Coordinated deployment and supervision",
-    text: "Every assignment starts with a written plan. Supervisors verify attendance and standards, and you have a direct line to the office and both partners.",
+    text: "Every assignment starts with a written plan. Supervisors verify attendance and standards, and you have a direct line to the office and both founders.",
     icon: ClipboardList,
   },
   {

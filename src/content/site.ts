@@ -15,7 +15,7 @@ export const site = {
   description:
     "From security guards and event bouncers to personal security officers, supervisors and manpower supply, Black Hawk Security Solution helps businesses and individuals discuss and arrange personnel for their requirements.",
   serviceArea: "Haryana and Delhi NCR",
-  foundedNote: "A partnership between Sandeep Beniwal and Aryan Beniwal",
+  foundedNote: "Founded by Sandeep Beniwal and Aryan Beniwal",
   email: "helloblackhawkss@gmail.com",
   gstin: "06ABEFB7001K1ZP",
   pan: "ABEFB7001K",
@@ -62,7 +62,7 @@ export const contacts: readonly ContactPerson[] = [
   {
     id: "sandeep",
     label: "Sandeep Beniwal",
-    role: "Partner · Security Operations",
+    role: "Co-Founder · Security Operations",
     display: "+91 92555 34554",
     e164: "919255534554",
     whatsapp: true,
@@ -70,7 +70,7 @@ export const contacts: readonly ContactPerson[] = [
   {
     id: "aryan",
     label: "Aryan Beniwal",
-    role: "Partner · Technology & Business",
+    role: "Co-Founder · Technology & Business",
     display: "+91 94668 80164",
     e164: "919466880164",
     whatsapp: true,

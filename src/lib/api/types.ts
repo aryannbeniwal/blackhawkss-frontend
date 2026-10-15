@@ -7,7 +7,7 @@ export type ServiceCategoryValue =
   | "PERSONAL_SECURITY_OFFICERS"
   | "SECURITY_SUPERVISORS"
   | "MANPOWER_SUPPLY"
-  | "GARDENERS_MAIDS"
+  | "HOUSEKEEPING"
   | "OTHER";
 
 export type EnquiryRequest = {
@@ -40,7 +40,7 @@ export type ApplicationRequest = {
   fullName: string;
   phone: string;
   city: string;
-  roleApplied: "SECURITY_GUARD" | "BOUNCER" | "PSO" | "SUPERVISOR" | "MANPOWER" | "GARDENER_MAID";
+  roleApplied: "SECURITY_GUARD" | "BOUNCER" | "PSO" | "SUPERVISOR" | "MANPOWER" | "HOUSEKEEPING";
   experienceYears: number;
   exServiceman: boolean;
   serviceUnit?: string;

@@ -13,7 +13,7 @@ export const cities: City[] = [
     intro: [
       "Panipat is our home district. Black Hawk Security Solution operates from Samalkha, and most of the organisations in our client register are Panipat businesses: textile and handloom units around Sector 29 Part II and Rishalu Road, a hospital at Sewah, hotels and traders at Jhattipur, and industrial premises along Khalila Road.",
       "Textile and export units here run on material movement, which is why our Panipat deployments lean on gate registers, vehicle checks and night patrols with a supervisor over multi-gate teams. For hospitals and hotels on the GT Road corridor, the emphasis shifts to courteous entry control and parking discipline.",
-      "Because the office is close, a partner can visit a Panipat site before quoting and a supervisor can reach a post quickly when something needs attention.",
+      "Because the office is close, a founder can visit a Panipat site before quoting and a supervisor can reach a post quickly when something needs attention.",
     ],
     localities: ["Sector 29 Part II", "GT Road", "Sewah", "Jhattipur", "Rishalu Road", "Khalila Road", "Model Town", "Tehsil Camp"],
     featuredServices: ["security-guards", "security-supervisors", "manpower-supply", "bouncers-event-security"],
@@ -35,16 +35,16 @@ export const cities: City[] = [
     fromOffice: "Our office is in Samalkha itself, on Old Thana Road near Anaj Mandi Gate No. 1.",
     intro: [
       "Samalkha is where Black Hawk Security Solution is based. Our office sits on Old Thana Road near Anaj Mandi Gate No. 1, and our earliest assignments were for local businesses: a jeweller on Railway Road, hotels at Pattikalyana, a banquet venue and a dhaba on the Main GT Road, a polymer unit by the Anaj Mandi and a textile business at Manana.",
-      "Being local means the partners know the town's venues, the mandi's rhythms and the GT Road traffic that shapes function nights. It also means a guard who does not report is replaced from nearby, and a client can walk into the office rather than wait on a call.",
-      "For Samalkha households and farmhouses we also arrange gardeners and domestic support staff through the same office.",
+      "Being local means the founders know the town's venues, the mandi's rhythms and the GT Road traffic that shapes function nights. It also means a guard who does not report is replaced from nearby, and a client can walk into the office rather than wait on a call.",
+      "For Samalkha households, offices and farmhouses we also arrange housekeeping staff, gardeners and domestic support through the same office.",
     ],
     localities: ["Old Thana Road", "Anaj Mandi", "Railway Road", "Main GT Road", "Pattikalyana", "Chulkana Road", "Manana", "Shastri Colony"],
-    featuredServices: ["security-guards", "bouncers-event-security", "gardeners-maids", "manpower-supply"],
+    featuredServices: ["security-guards", "bouncers-event-security", "housekeeping-services", "manpower-supply"],
     servedOrgs: ["Satguru Enterprises", "The Utsav Greens", "Arihant Jewellers", "Mittal Polymers", "Shivpriya Hotel", "Daawat Hotel", "Krishna Hotel", "Home Linen", "Sartaj Dhaba", "Shree Shyam Baba Mandir"],
     faqs: [
-      { q: "Where is your office in Samalkha?", a: "Old Thana Road, Near Anaj Mandi Gate No. 1, Samalkha, Panipat, Haryana 132101. Call ahead on +91 88010 00054 so a partner is available." },
+      { q: "Where is your office in Samalkha?", a: "Old Thana Road, Near Anaj Mandi Gate No. 1, Samalkha, Panipat, Haryana 132101. Call ahead on +91 88010 00054 so one of the founders is available." },
       { q: "Do you provide bouncers for weddings in Samalkha?", a: "Yes. Wedding and function-night deployments at local banquet venues are a regular part of our work." },
-      { q: "Can I hire a gardener or maid through you?", a: "Yes. Gardeners and domestic support staff are arranged as a separate support service with document verification." },
+      { q: "Can I hire housekeeping staff, a gardener or a maid through you?", a: "Yes. Housekeeping staff, gardeners and domestic support are arranged as a separate support service with document verification." },
     ],
     seo: {
       title: "Security Services in Samalkha — Black Hawk Security Solution",
@@ -80,9 +80,9 @@ export const cities: City[] = [
     state: "Haryana",
     fromOffice: "Our office in Samalkha is about 55 km from Karnal along NH-44.",
     intro: [
-      "Karnal sits an hour up the GT Road from our Samalkha office, close enough for a partner to visit before a deployment and for supervisors to cover sites on a regular schedule. We deploy guards and supervisors to Karnal's commercial areas around Model Town, Sector 12 and the GT Road belt, and manpower to units along the highway.",
+      "Karnal sits an hour up the GT Road from our Samalkha office, close enough for a founder to visit before a deployment and for supervisors to cover sites on a regular schedule. We deploy guards and supervisors to Karnal's commercial areas around Model Town, Sector 12 and the GT Road belt, and manpower to units along the highway.",
       "Karnal's mix of agricultural institutions, rice and dairy industry, hotels along NH-44 and a growing residential sector produces the same core needs we see elsewhere: controlled gates, night cover and someone accountable on site. For functions at venues near Liberty Chowk and the highway, we provide bouncers and event teams.",
-      "We do not yet have a Karnal client in our published register, so our Karnal deployments are quoted after a site visit and a direct discussion with the partners.",
+      "We do not yet have a Karnal client in our published register, so our Karnal deployments are quoted after a site visit and a direct discussion with the founders.",
     ],
     localities: ["Model Town", "Sector 12", "GT Road", "Liberty Chowk", "Kunjpura Road", "Nilokheri"],
     featuredServices: ["security-guards", "security-supervisors", "bouncers-event-security", "manpower-supply"],
@@ -105,7 +105,7 @@ export const cities: City[] = [
     intro: [
       "Kurukshetra brings a particular kind of work: large gatherings. Religious and cultural events around Brahma Sarovar, fairs at Pipli and festivals on the university campus draw crowds that need planned lanes, entry control and a team lead who coordinates with organisers and local authorities.",
       "We deploy event teams and bouncers to Kurukshetra for such occasions, and guards and supervisors to institutions and commercial premises in Thanesar and along the Pipli–Pehowa road for longer assignments.",
-      "Kurukshetra is at the edge of our regular range, so assignments here are planned with a little more lead time and quoted after a direct discussion with the partners.",
+      "Kurukshetra is at the edge of our regular range, so assignments here are planned with a little more lead time and quoted after a direct discussion with the founders.",
     ],
     localities: ["Pipli", "Thanesar", "Brahma Sarovar", "University Area", "Sector 7", "Pehowa Road"],
     featuredServices: ["bouncers-event-security", "security-guards", "manpower-supply", "security-supervisors"],
@@ -174,7 +174,7 @@ export const cities: City[] = [
     intro: [
       "Noida's requirement profile is corporate offices and IT parks in Sectors 62 and 63, media and production houses around Film City, and large residential developments stretching into Greater Noida. We deploy guards and supervisors for office entrances and residential gates, and bouncers for corporate events, shoots and launches.",
       "Noida is across the Yamuna from our Haryana base, so assignments here are planned with a supervisor on the ground and a little more lead time than our Panipat and Sonipat work.",
-      "We have not yet published a Noida client in our register. New Noida deployments are quoted after a direct discussion with the partners and, for multi-post sites, a visit.",
+      "We have not yet published a Noida client in our register. New Noida deployments are quoted after a direct discussion with the founders and, for multi-post sites, a visit.",
     ],
     localities: ["Sector 62", "Sector 63", "Film City", "Sector 18", "Greater Noida", "Noida Expressway"],
     featuredServices: ["security-guards", "bouncers-event-security", "security-supervisors", "manpower-supply"],
@@ -197,7 +197,7 @@ export const cities: City[] = [
     intro: [
       "Faridabad is an industrial city, and our deployments here follow the pattern we know from Panipat: multi-gate factory premises in the Ballabgarh industrial belt and the NIT sectors, with gate registers, vehicle checks, night patrols and a supervisor accountable for the team. Commercial complexes in Sectors 15 and 16 bring the usual entrance and parking requirements.",
       "As the southern-most point of our NCR range, Faridabad assignments are set up with a local supervisor and planned a little further ahead than our Haryana-north work.",
-      "We have not yet published a Faridabad client in our register. We quote after a direct discussion with the partners and a site visit for multi-post deployments.",
+      "We have not yet published a Faridabad client in our register. We quote after a direct discussion with the founders and a site visit for multi-post deployments.",
     ],
     localities: ["Sector 15", "Sector 16", "NIT", "Ballabgarh Industrial Area", "Old Faridabad", "Sector 12"],
     featuredServices: ["security-guards", "security-supervisors", "manpower-supply", "bouncers-event-security"],

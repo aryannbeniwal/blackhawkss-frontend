@@ -10,7 +10,7 @@ export const leaders: Leader[] = [
     bio: [
       "Sandeep Beniwal served in the Indian Army for over 17 years in the Jat Regiment. A former professional wrestler, he brings physical resilience, fitness, discipline and determination to the private security sector.",
       "His leadership philosophy is simple: disciplined operations, professional conduct, close supervision and accountability. Guards are briefed properly, posts are checked, and problems are reported rather than hidden.",
-      "At Black Hawk he leads security operations, personnel mentorship and site standards, and is the partner clients speak to about deployments on the ground.",
+      "At Black Hawk he leads security operations, personnel mentorship and site standards, and is the founder clients speak to about deployments on the ground.",
     ],
     focusAreas: ["Security operations", "Supervision and site standards", "Personnel mentorship", "Accountability and alertness"],
     quote: "Security is not just a service; it is a commitment to protection born from years of serving the nation.",
@@ -42,9 +42,9 @@ export const aboutPage = {
   heading: "The People Behind Black Hawk",
   tagline: "Military discipline meets modern thinking — united by a commitment to professional security.",
   story: [
-    "Black Hawk Security Solution is a partnership between Sandeep Beniwal and Aryan Beniwal, based in Samalkha, Panipat, and serving clients across Haryana and Delhi NCR. It was built on a straightforward idea: security personnel should be led by someone who understands discipline from the inside, and the business should be run with the same clarity.",
+    "Black Hawk Security Solution was founded by Sandeep Beniwal and Aryan Beniwal, is based in Samalkha, Panipat, and serving clients across Haryana and Delhi NCR. It was built on a straightforward idea: security personnel should be led by someone who understands discipline from the inside, and the business should be run with the same clarity.",
     "Sandeep brings over 17 years of Indian Army service and the habits that come with it: briefings, post checks, supervision and accountability. He sets the operational standard and mentors the personnel who carry the Black Hawk badge.",
-    "Aryan brings technology, management and modern business processes. He ensures enquiries are answered, quotations are clear, deployments are documented and clients have a reliable point of contact. Together, the two partners cover both sides of what a security agency has to get right: the people on the ground and the systems behind them.",
+    "Aryan brings technology, management and modern business processes. He ensures enquiries are answered, quotations are clear, deployments are documented and clients have a reliable point of contact. Together, the two founders cover both sides of what a security agency has to get right: the people on the ground and the systems behind them.",
   ],
   values: [
     { title: "Professionalism", text: "Uniform, conduct and courtesy are part of the job, not extras." },

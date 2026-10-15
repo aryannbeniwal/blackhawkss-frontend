@@ -39,7 +39,7 @@ export const pageSeo: Record<PageKey, { title: string; description: string }> = 
   about: {
     title: "About Us — The People Behind Black Hawk",
     description:
-      "Black Hawk Security Solution is a partnership between Sandeep Beniwal, a retired Indian Army serviceman, and Aryan Beniwal, a software engineer. Discipline on the ground, clear systems behind it.",
+      "Black Hawk Security Solution was founded by Sandeep Beniwal, a retired Indian Army serviceman, and Aryan Beniwal, a software engineer. Discipline on the ground, clear systems behind it.",
   },
   services: {
     title: "Security & Manpower Services",

@@ -65,7 +65,7 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div className="lg:col-span-8">
-                    <p className="eyebrow">Partner</p>
+                    <p className="eyebrow">Co-Founder</p>
                     <h2 className="display-md mt-3">{l.name}</h2>
                     <p className="mt-1 font-medium text-brand-gold">{l.title}</p>
                     <div className="mt-5 space-y-4">

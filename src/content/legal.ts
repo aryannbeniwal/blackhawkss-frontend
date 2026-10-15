@@ -24,14 +24,14 @@ export const privacyPolicy: LegalDocument = {
     {
       heading: "How we use it",
       paragraphs: [
-        "We use the information to respond to your enquiry or application, prepare a quotation, arrange a deployment or interview, and keep a record of the conversation. Enquiries are sent by email to the partners and stored in our enquiry system so they can be followed up.",
+        "We use the information to respond to your enquiry or application, prepare a quotation, arrange a deployment or interview, and keep a record of the conversation. Enquiries are sent by email to the founders and stored in our enquiry system so they can be followed up.",
         "We do not sell, rent or trade your information, and we do not use it for marketing lists. If you later become a client or employee, the information you gave us forms part of that relationship's records.",
       ],
     },
     {
       heading: "Where it is stored",
       paragraphs: [
-        "Form submissions are stored in a database on a server operated by Black Hawk Security Solution and in the email accounts of the partners. Access is limited to the partners and anyone they authorise for administration.",
+        "Form submissions are stored in a database on a server operated by Black Hawk Security Solution and in the email accounts of the founders. Access is limited to the founders and anyone they authorise for administration.",
       ],
     },
     {

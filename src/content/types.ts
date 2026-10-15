@@ -6,7 +6,7 @@ export type ServiceSlug =
   | "personal-security-officers"
   | "security-supervisors"
   | "manpower-supply"
-  | "gardeners-maids";
+  | "housekeeping-services";
 
 /** Values sent to the backend enquiry API. Keep in sync with the Java enum ServiceCategory. */
 export type ServiceCategory =
@@ -15,7 +15,7 @@ export type ServiceCategory =
   | "PERSONAL_SECURITY_OFFICERS"
   | "SECURITY_SUPERVISORS"
   | "MANPOWER_SUPPLY"
-  | "GARDENERS_MAIDS"
+  | "HOUSEKEEPING"
   | "OTHER";
 
 export type Service = {
@@ -29,7 +29,7 @@ export type Service = {
   summary: string;
   /** 2–3 sentence intro for the service page hero */
   intro: string;
-  /** "support" services (gardeners & maids) render on the light sand theme */
+  /** "support" services (housekeeping) render on the light sand theme */
   tone: "core" | "support";
   icon: LucideIcon;
   image: { src: string; alt: string } | null;

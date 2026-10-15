@@ -1,4 +1,4 @@
-export type CareerRoleValue = "SECURITY_GUARD" | "BOUNCER" | "PSO" | "SUPERVISOR" | "MANPOWER" | "GARDENER_MAID";
+export type CareerRoleValue = "SECURITY_GUARD" | "BOUNCER" | "PSO" | "SUPERVISOR" | "MANPOWER" | "HOUSEKEEPING";
 
 export const careersPage = {
   heading: "Join Black Hawk",
@@ -14,7 +14,7 @@ export const careersPage = {
     { value: "PSO" as CareerRoleValue, label: "Personal Security Officer", summary: "Accompanying a principal during movement and functions. Discretion and presentation essential." },
     { value: "SUPERVISOR" as CareerRoleValue, label: "Security Supervisor", summary: "Leading a guard team: rosters, attendance, post checks and daily reporting to the client." },
     { value: "MANPOWER" as CareerRoleValue, label: "Manpower / Support Staff", summary: "Helpers, loaders, housekeeping and event set-up roles at client sites." },
-    { value: "GARDENER_MAID" as CareerRoleValue, label: "Gardener / Domestic Support", summary: "Gardening and household support placements with verified households and societies." },
+    { value: "HOUSEKEEPING" as CareerRoleValue, label: "Housekeeping / Gardener / Domestic Support", summary: "Housekeeping, gardening and household support placements with verified offices, households and societies." },
   ],
   eligibility: [
     "Age 18 or above (21 or above for bouncer and PSO roles)",

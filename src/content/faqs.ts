@@ -35,7 +35,7 @@ export const generalFaqs: Faq[] = [
   },
   {
     q: "Do you also provide domestic staff?",
-    a: "Yes. Gardeners, maids and domestic support staff are arranged through the same office as a separate support service, with the same document verification.",
+    a: "Yes. Housekeeping staff, gardeners, maids and domestic support are arranged through the same office as a separate support service, with the same document verification.",
   },
   {
     q: "Is Black Hawk a licensed agency?",
