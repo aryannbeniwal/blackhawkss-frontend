@@ -57,7 +57,7 @@ Backend `.env.example`: DB (`DB_URL/USER/PASS`, `POSTGRES_*`), `JWT_SECRET` (≥
 ## 7. Known limitations / not verified
 - Real Postgres, Docker images and SMTP sending were **not** exercised locally (no Postgres/Docker/credentials on this machine); migrations are plain ANSI SQL and pass on H2-in-Postgres-mode.
 - Gallery images are served from `/uploads` (nginx in prod, Next rewrite in dev); `thumbUrl`/`url` are site-relative.
-- All site photography is now genuine (owner-supplied). The project-highlight clip is the original 3.4 MB WhatsApp MP4, loaded only when scrolled into view; a re-encoded ~1 MB version would be nicer (no ffmpeg on this machine).
+- All site photography is genuine (owner-supplied) except the hero background, which is the stylised AI guard image kept by the owners' choice (decorative, no claims attached). The project-highlight clip is the original 3.4 MB WhatsApp MP4, loaded only when scrolled into view; a re-encoded ~1 MB version would be nicer (no ffmpeg on this machine).
 - Client register has **24** organisations (the PDF numbering skips 17).
 - No automated UI tests for the admin panel.
 
