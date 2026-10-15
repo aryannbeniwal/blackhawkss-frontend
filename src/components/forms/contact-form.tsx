@@ -13,6 +13,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { track } from "@/lib/analytics";
 import { publicApi } from "@/lib/api/endpoints/public";
 import { ApiError } from "@/lib/api/http";
+import { formatLeadMessage, leadMode } from "@/lib/lead-mode";
+import { whatsappLink } from "@/lib/whatsapp";
 
 const schema = z.object({
   fullName: z.string().trim().min(2, "Please enter your name").max(80),
@@ -36,6 +38,13 @@ export function ContactForm() {
       toast.error("Please take a moment to review the form before submitting.");
       return;
     }
+    if (leadMode === "whatsapp") {
+      const message = formatLeadMessage("Message from the website", [["Name", values.fullName], ["Mobile", values.phone], ["Email", values.email], ["Message", values.message]]);
+      track("contact_submit", { mode: "whatsapp" });
+      window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
+      setDone(true);
+      return;
+    }
     try {
       await publicApi.submitContact({ ...values, phone: values.phone.replace(/\D/g, "").slice(-10), email: values.email || undefined });
       track("contact_submit");
@@ -49,7 +58,7 @@ export function ContactForm() {
     return (
       <div className="rounded-xl border border-brand-gold/40 bg-card p-6 text-center" role="status">
         <CheckCircle2 className="mx-auto size-10 text-brand-gold" />
-        <p className="mt-3 font-semibold">Message received. We will get back to you shortly.</p>
+        <p className="mt-3 font-semibold">{leadMode === "whatsapp" ? "WhatsApp opened with your message. Press Send there and we will get back to you." : "Message received. We will get back to you shortly."}</p>
       </div>
     );
   }

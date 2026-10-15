@@ -9,6 +9,8 @@ export function backendUrl(path: string): string {
 
 /** Public GET used by server components inside a "use cache" scope (gallery, announcements). Never throws. */
 export async function backendGet<T>(path: string): Promise<T | null> {
+  // Frontend-only deployment (no API yet): skip the network call entirely.
+  if (process.env.NEXT_PUBLIC_LEAD_MODE === "whatsapp") return null;
   try {
     const res = await fetch(backendUrl(path), { headers: { accept: "application/json" } });
     if (!res.ok) return null;

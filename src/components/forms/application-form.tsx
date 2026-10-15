@@ -12,10 +12,12 @@ import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { careersPage, type CareerRoleValue } from "@/content/careers";
+import { careerRoleLabel, careersPage, type CareerRoleValue } from "@/content/careers";
 import { track } from "@/lib/analytics";
 import { publicApi } from "@/lib/api/endpoints/public";
 import { ApiError } from "@/lib/api/http";
+import { formatLeadMessage, leadMode } from "@/lib/lead-mode";
+import { whatsappLink } from "@/lib/whatsapp";
 
 const roles = careersPage.roles.map((r) => r.value) as [CareerRoleValue, ...CareerRoleValue[]];
 
@@ -52,6 +54,23 @@ export function ApplicationForm() {
       toast.error("Please take a moment to review the form before submitting.");
       return;
     }
+    if (leadMode === "whatsapp") {
+      const message = formatLeadMessage("Job application", [
+        ["Name", v.fullName],
+        ["Mobile", v.phone],
+        ["District / city", v.city],
+        ["Role", careerRoleLabel(v.roleApplied)],
+        ["Experience (years)", v.experienceYears],
+        ["Age", typeof v.age === "number" ? v.age : undefined],
+        ["Ex-serviceman", v.exServiceman],
+        ["Unit", v.serviceUnit],
+        ["Note", v.message],
+      ]);
+      track("application_submit", { role: v.roleApplied, mode: "whatsapp" });
+      window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
+      setDone(true);
+      return;
+    }
     try {
       await publicApi.submitApplication({
         fullName: v.fullName,
@@ -76,7 +95,7 @@ export function ApplicationForm() {
       <div className="rounded-xl border border-brand-gold/40 bg-background/50 p-6 text-center" role="status">
         <CheckCircle2 className="mx-auto size-10 text-brand-gold" />
         <p className="mt-3 font-semibold">Application received · आवेदन मिल गया</p>
-        <p className="mt-1 text-sm text-muted-foreground">We will call you when a suitable assignment comes up.</p>
+        <p className="mt-1 text-sm text-muted-foreground">{leadMode === "whatsapp" ? "WhatsApp opened with your details. Press Send there to complete the application." : "We will call you when a suitable assignment comes up."}</p>
       </div>
     );
   }

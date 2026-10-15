@@ -13,12 +13,13 @@ import { Field, FieldDescription, FieldError, FieldGroup, FieldLabel, FieldLegen
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { serviceCategoryOptions } from "@/content/services";
+import { serviceCategoryLabel, serviceCategoryOptions } from "@/content/services";
 import { primaryContact } from "@/content/site";
 import type { ServiceCategory } from "@/content/types";
 import { track } from "@/lib/analytics";
 import { publicApi } from "@/lib/api/endpoints/public";
 import { ApiError } from "@/lib/api/http";
+import { formatLeadMessage, leadMode } from "@/lib/lead-mode";
 import { telLink, whatsappLink } from "@/lib/whatsapp";
 
 const phoneRegex = /^(\+91[\-\s]?)?[6-9]\d{9}$/;
@@ -96,6 +97,30 @@ export function QuoteForm({ defaultService, compact = false }: { defaultService?
       toast.error("Please take a moment to review the form before submitting.");
       return;
     }
+    if (leadMode === "whatsapp") {
+      const message = formatLeadMessage("New quote request", [
+        ["Name", values.fullName],
+        ["Mobile", values.phone],
+        ["Email", values.email],
+        ["Organisation", values.organisation],
+        ["Service", serviceCategoryLabel(values.serviceCategory)],
+        ["Location", values.location],
+        ["Preferred date", values.preferredDate],
+        ["Personnel", values.personnelCount],
+        ["Duration / shift", values.durationShift],
+        ["Event / site", values.siteName],
+        ["Venue", values.eventVenue],
+        ["Expected attendance", typeof values.expectedCrowd === "number" ? values.expectedCrowd : undefined],
+        ["Event start", values.eventStart],
+        ["Event end", values.eventEnd],
+        ["Requirements", values.requirements],
+      ]);
+      track("quote_submit", { service: values.serviceCategory, personnel: values.personnelCount, mode: "whatsapp" });
+      window.open(whatsappLink(message), "_blank", "noopener,noreferrer");
+      setSuccess({ referenceCode: "WhatsApp" });
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
     try {
       const res = await publicApi.submitEnquiry({
         ...values,
@@ -131,17 +156,30 @@ export function QuoteForm({ defaultService, compact = false }: { defaultService?
     return (
       <div className="rounded-2xl border border-brand-gold/40 bg-card p-8 text-center sm:p-10" role="status" aria-live="polite">
         <CheckCircle2 className="mx-auto size-12 text-brand-gold" />
-        <h2 className="display-md mt-5">Enquiry received</h2>
-        <p className="mt-3 text-muted-foreground">
-          Your reference is{" "}
-          <span className="font-mono text-lg font-semibold text-brand-gold">{success.referenceCode}</span>. We will review the requirement and call you
-          from <span className="whitespace-nowrap font-semibold text-foreground">{primaryContact.display}</span>.
-        </p>
-        <p className="mt-2 text-sm text-muted-foreground">Need to add something? Reply on WhatsApp quoting the reference.</p>
+        <h2 className="display-md mt-5">{success.referenceCode === "WhatsApp" ? "Almost there" : "Enquiry received"}</h2>
+        {success.referenceCode === "WhatsApp" ? (
+          <p className="mt-3 text-muted-foreground">
+            WhatsApp should have opened with your request pre-filled. Press <span className="font-semibold text-foreground">Send</span> there and we will call you back from{" "}
+            <span className="whitespace-nowrap font-semibold text-foreground">{primaryContact.display}</span>. If it did not open, use the button below.
+          </p>
+        ) : (
+          <>
+            <p className="mt-3 text-muted-foreground">
+              Your reference is{" "}
+              <span className="font-mono text-lg font-semibold text-brand-gold">{success.referenceCode}</span>. We will review the requirement and call you
+              from <span className="whitespace-nowrap font-semibold text-foreground">{primaryContact.display}</span>.
+            </p>
+            <p className="mt-2 text-sm text-muted-foreground">Need to add something? Reply on WhatsApp quoting the reference.</p>
+          </>
+        )}
         <div className="mt-7 flex flex-col justify-center gap-3 sm:flex-row">
           <Button asChild className="bg-[#25D366] text-black hover:brightness-110">
-            <a href={whatsappLink(`Hello Black Hawk Security Solution, this is regarding my enquiry ${success.referenceCode}.`)} target="_blank" rel="noopener noreferrer">
-              Continue on WhatsApp
+            <a
+              href={whatsappLink(success.referenceCode === "WhatsApp" ? undefined : `Hello Black Hawk Security Solution, this is regarding my enquiry ${success.referenceCode}.`)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {success.referenceCode === "WhatsApp" ? "Open WhatsApp" : "Continue on WhatsApp"}
             </a>
           </Button>
           <Button asChild variant="outline">

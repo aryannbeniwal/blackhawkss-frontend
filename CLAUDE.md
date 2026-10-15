@@ -27,5 +27,8 @@ npm run typegen      # regenerate route types after adding routes (PageProps/Lay
 - Cache Components: never read `cookies()`/`headers()`/`searchParams` outside a `<Suspense>`; no `new Date()`/`Math.random()` in server-rendered output (use a client component).
 - Secrets only in env; `NEXT_PUBLIC_*` are public. See `.env.example`.
 
+## Lead mode
+`NEXT_PUBLIC_LEAD_MODE=whatsapp` makes the three forms open WhatsApp instead of calling the API (see `src/lib/lead-mode.ts`); `backendGet` short-circuits to null. Default is `api`.
+
 ## Backend contract
 Envelope `{ success, data }` / `{ success:false, error:{ code, message, fields } }`. Paging `{ items, page, size, totalItems, totalPages }`. Booleans are `published`, `exServiceman` (no `is` prefix). Types in `src/lib/api/types.ts`.

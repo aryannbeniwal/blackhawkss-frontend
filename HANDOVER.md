@@ -12,6 +12,9 @@ Date: 2026-10-15 · Repos: `blackhawkss-frontend`, `blackhawkss-backend` (both c
 
 **Infra (prepared, not deployed)** — `blackhawkss-backend/deploy/`: docker-compose (postgres, api, web, nginx, certbot; arm64; memory limits + JVM flags for the 2 OCPU / 12 GB Oracle VM), nginx config, step-by-step `deploy/README.md`; Dockerfiles in both repos; GitHub Actions CI in both; manual deploy workflow gated on a secret.
 
+## 1b. Frontend-only hosting (interim)
+The site can run without the API: set `NEXT_PUBLIC_LEAD_MODE=whatsapp` (e.g. on Vercel). Quote, contact and careers forms then validate and open WhatsApp to +91 88010 00054 with the details pre-filled; gallery shows the bundled photos only; `/admin` is unavailable. Switch back to `api` (and set `BACKEND_URL`) once the Oracle VM is up.
+
 ## 2. Stack actually used
 Next 16.4.1 · React 19.3 · TypeScript 5 · Tailwind 4 · shadcn CLI 4 (radix-nova) · motion 14 · react-hook-form 7 + zod 4 · @tanstack/react-query 5 · Spring Boot 4.1.1 · Java 25 (Temurin, auto-provisioned by Gradle foojay plugin) · Gradle 9.8 Kotlin DSL · PostgreSQL driver + Flyway · Spring Security 7 + jjwt 0.12 · bucket4j · Thumbnailator · springdoc 3.1.1 · H2 (dev/test only).
 
