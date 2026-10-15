@@ -26,27 +26,31 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="container-x grid gap-12 py-20 lg:grid-cols-12">
-        <Reveal className="space-y-5 lg:col-span-7">
-          {aboutPage.story.map((p, i) => (
-            <p key={i} className={i === 0 ? "text-lg leading-relaxed text-foreground/90" : "leading-relaxed text-muted-foreground"}>
-              {p}
-            </p>
-          ))}
-        </Reveal>
-        <Reveal delay={0.1} className="space-y-6 lg:col-span-5">
-          <figure className="overflow-hidden rounded-2xl border border-border">
-            <div className="relative aspect-[3/4]">
-              <Image src={aboutPhoto.src} alt={aboutPhoto.alt} fill className="object-cover" sizes="(min-width: 1024px) 28rem, 100vw" />
+      <section className="container-x grid gap-10 py-20 lg:grid-cols-12 lg:gap-14">
+        <div className="space-y-8 lg:col-span-7">
+          <Reveal className="space-y-5">
+            {aboutPage.story.map((p, i) => (
+              <p key={i} className={i === 0 ? "text-lg leading-relaxed text-foreground/90" : "leading-relaxed text-muted-foreground"}>
+                {p}
+              </p>
+            ))}
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="rounded-2xl border border-border bg-card p-7">
+              <p className="eyebrow">
+                <ClawMark /> {aboutPage.openDoor.title}
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{aboutPage.openDoor.text}</p>
+            </div>
+          </Reveal>
+        </div>
+        <Reveal delay={0.1} className="lg:col-span-5">
+          <figure className="overflow-hidden rounded-2xl border border-border lg:sticky lg:top-28">
+            <div className="relative aspect-[4/5]">
+              <Image src={aboutPhoto.src} alt={aboutPhoto.alt} fill className="object-cover object-[50%_35%]" sizes="(min-width: 1024px) 26rem, 100vw" />
             </div>
             <figcaption className="bg-card px-4 py-3 text-xs text-muted-foreground">{aboutPhoto.caption}</figcaption>
           </figure>
-          <div className="rounded-2xl border border-border bg-card p-7">
-            <p className="eyebrow">
-              <ClawMark /> {aboutPage.openDoor.title}
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{aboutPage.openDoor.text}</p>
-          </div>
         </Reveal>
       </section>
 

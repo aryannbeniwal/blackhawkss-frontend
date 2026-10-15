@@ -24,9 +24,9 @@ export function LeadershipPreview() {
           {leaders.map((l, i) => (
             <Reveal key={l.id} delay={i * 0.1}>
               <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-6">
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-brand-steel">
+                <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-brand-steel">
                   {l.portrait ? (
-                    <Image src={l.portrait.src} alt={l.portrait.alt} fill className="object-cover" sizes="(min-width: 1024px) 24rem, 100vw" />
+                    <Image src={l.portrait.src} alt={l.portrait.alt} fill className="object-cover object-top" sizes="(min-width: 1024px) 20rem, 100vw" />
                   ) : (
                     <div className="flex h-full items-center justify-center">
                       <span className="font-display text-6xl font-bold text-brand-gold/30">{l.name.split(" ").map((n) => n[0]).join("")}</span>
