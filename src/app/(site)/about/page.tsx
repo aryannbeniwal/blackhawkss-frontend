@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Quote } from "lucide-react";
+import { Phone } from "lucide-react";
 import { HawkMark } from "@/components/brand/hawk-mark";
 import { ClawMark } from "@/components/brand/claw-mark";
 import { CtaBand } from "@/components/site/cta-band";
@@ -86,9 +86,9 @@ export default function AboutPage() {
                       ))}
                     </div>
                     {l.quote && (
-                      <blockquote className="mt-6 flex gap-3 border-l-2 border-brand-gold pl-4 text-foreground/90">
-                        <Quote className="size-5 shrink-0 text-brand-gold" />
-                        <p className="italic">{l.quote}</p>
+                      <blockquote className="relative mt-6 border-l-2 border-brand-gold py-1 pl-5 text-foreground/90">
+                        <span aria-hidden className="absolute -top-3 left-3 font-display text-5xl leading-none text-brand-gold/70">&ldquo;</span>
+                        <p className="relative pl-5 italic">{l.quote}</p>
                       </blockquote>
                     )}
                     <ul className="mt-6 flex flex-wrap gap-2">
@@ -99,8 +99,11 @@ export default function AboutPage() {
                       ))}
                     </ul>
                     {contact && (
-                      <a href={telLink(contact)} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-gold link-underline">
-                        Call {l.name.split(" ")[0]} · {contact.display}
+                      <a
+                        href={telLink(contact)}
+                        className="mt-7 inline-flex items-center gap-2 rounded-full border border-brand-gold/50 px-4 py-2 text-sm font-semibold text-brand-gold transition hover:bg-brand-gold hover:text-brand-black"
+                      >
+                        <Phone className="size-4" /> Call {l.name.split(" ")[0]} · <span className="tabular-nums">{contact.display}</span>
                       </a>
                     )}
                   </div>
