@@ -13,7 +13,7 @@ export const services: Service[] = [
       "Our guard deployments are built around the site, not a template. We discuss entry points, shift patterns, visitor flow and reporting lines before a single guard is posted, and a supervisor keeps the deployment on standard once it begins.",
     tone: "core",
     icon: ShieldCheck,
-    image: { src: "/images/guard-street.jpg", alt: "Black Hawk security personnel in uniform (representative image)" },
+    image: { src: "/images/guards-industrial-gate.jpg", alt: "Black Hawk Security Solution guards on night duty at an industrial site gate" },
     whoItsFor: [
       "Offices, showrooms and commercial complexes that need controlled entry and a professional front",
       "Residential societies and gated communities managing residents, visitors and vehicles",
@@ -65,7 +65,7 @@ export const services: Service[] = [
       "Event work is about preparation. We plan entry lanes, barricade points and escalation paths with the organiser in advance, then deploy a team under a lead who stays in contact with your event desk throughout.",
     tone: "core",
     icon: Users,
-    image: { src: "/images/guard-park.jpg", alt: "Black Hawk event security personnel (representative image)" },
+    image: { src: "/images/prisma-team-day-2.jpg", alt: "Black Hawk bouncer team on the ground at PRISMA Fest 2026, SRM University" },
     whoItsFor: [
       "University and college festivals with large student crowds",
       "Concerts, exhibitions and public shows",

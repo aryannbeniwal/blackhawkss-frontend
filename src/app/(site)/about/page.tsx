@@ -6,7 +6,7 @@ import { CtaBand } from "@/components/site/cta-band";
 import { JsonLd } from "@/components/site/json-ld";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
-import { aboutPage, leaders } from "@/content/leadership";
+import { aboutPage, aboutPhoto, leaders } from "@/content/leadership";
 import { pageSeo } from "@/content/seo";
 import { contacts } from "@/content/site";
 import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
@@ -34,7 +34,13 @@ export default function AboutPage() {
             </p>
           ))}
         </Reveal>
-        <Reveal delay={0.1} className="lg:col-span-5">
+        <Reveal delay={0.1} className="space-y-6 lg:col-span-5">
+          <figure className="overflow-hidden rounded-2xl border border-border">
+            <div className="relative aspect-[3/4]">
+              <Image src={aboutPhoto.src} alt={aboutPhoto.alt} fill className="object-cover" sizes="(min-width: 1024px) 28rem, 100vw" />
+            </div>
+            <figcaption className="bg-card px-4 py-3 text-xs text-muted-foreground">{aboutPhoto.caption}</figcaption>
+          </figure>
           <div className="rounded-2xl border border-border bg-card p-7">
             <p className="eyebrow">
               <ClawMark /> {aboutPage.openDoor.title}

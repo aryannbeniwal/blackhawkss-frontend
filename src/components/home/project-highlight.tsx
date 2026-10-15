@@ -1,6 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { PrismaVideo } from "@/components/home/prisma-video";
 import { Reveal } from "@/components/site/reveal";
 import { StatCounter } from "@/components/site/stat-counter";
 import { verifiedStats } from "@/content/site";
@@ -10,16 +10,10 @@ export function ProjectHighlight() {
   return (
     <section className="relative overflow-hidden border-y border-border bg-brand-charcoal">
       <div className="container-x grid gap-10 py-20 sm:py-24 lg:grid-cols-12 lg:items-center">
-        <Reveal className="relative lg:col-span-6">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border">
-            <Image src="/images/guard-park.jpg" alt="Black Hawk personnel in uniform (representative image)" fill className="object-cover object-top" sizes="(min-width: 1024px) 40rem, 100vw" />
-            <div className="absolute inset-0 bg-gradient-to-t from-brand-black/80 to-transparent" />
-            <p className="absolute bottom-4 left-4 rounded-md bg-brand-black/70 px-3 py-1.5 text-[0.65rem] uppercase tracking-widest text-foreground/80">
-              Representative imagery
-            </p>
-          </div>
+        <Reveal className="relative lg:col-span-5">
+          <PrismaVideo />
         </Reveal>
-        <div className="lg:col-span-6">
+        <div className="lg:col-span-7">
           <Reveal>
             <p className="eyebrow">Project highlight</p>
             <h2 className="display-lg mt-4 text-balance">PRISMA Fest 2026 — SRM University, Sonipat</h2>

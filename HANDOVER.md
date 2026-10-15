@@ -33,7 +33,7 @@ Backend `.env.example`: DB (`DB_URL/USER/PASS`, `POSTGRES_*`), `JWT_SECRET` (≥
 1. **Email**: create a Resend account, add domain `blackhawkss.in` (3 DNS records), put SMTP creds in `.env`. Fallback: Gmail app password for helloblackhawkss@gmail.com (`SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=465`).
 2. **Analytics**: create a GA4 property, set `NEXT_PUBLIC_GA_ID`.
 3. **Google Maps**: done — the office pin (29.243607, 77.010575, confirmed 2026-10-15) drives the contact-page embed, directions link and LocalBusiness `geo` JSON-LD. `NEXT_PUBLIC_MAPS_EMBED_URL` is only an optional override.
-4. **Photos**: leadership portraits (`leaders[].portrait` in `src/content/leadership.ts`), gallery images via `/admin/gallery`, real site/event photos to replace the two representative AI images in `public/images/`.
+4. **Photos**: real photos received 2026-10-15 (PRISMA Fest 2026 team ×4 + clip, industrial gate, uniform gate, founders) and used on the hero, services, project highlight, About and Gallery. Founder portraits are crops from the event photo — replace with proper portraits when available (`leaders[].portrait`). More gallery images via `/admin/gallery`.
 5. **Licence wording** for `/compliance` (number is deliberately not shown).
 6. **Hosting**: Oracle VM, DNS A record, GitHub secrets for the deploy workflow — see `blackhawkss-backend/deploy/README.md`.
 
@@ -57,7 +57,7 @@ Backend `.env.example`: DB (`DB_URL/USER/PASS`, `POSTGRES_*`), `JWT_SECRET` (≥
 ## 7. Known limitations / not verified
 - Real Postgres, Docker images and SMTP sending were **not** exercised locally (no Postgres/Docker/credentials on this machine); migrations are plain ANSI SQL and pass on H2-in-Postgres-mode.
 - Gallery images are served from `/uploads` (nginx in prod, Next rewrite in dev); `thumbUrl`/`url` are site-relative.
-- The two guard photos are AI-generated representative imagery (labelled as such on the project highlight). Replace with real photos when available.
+- All site photography is now genuine (owner-supplied). The project-highlight clip is the original 3.4 MB WhatsApp MP4, loaded only when scrolled into view; a re-encoded ~1 MB version would be nicer (no ffmpeg on this machine).
 - Client register has **24** organisations (the PDF numbering skips 17).
 - No automated UI tests for the admin panel.
 

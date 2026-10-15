@@ -15,7 +15,7 @@ export const leaders: Leader[] = [
     focusAreas: ["Security operations", "Supervision and site standards", "Personnel mentorship", "Accountability and alertness"],
     quote: "Security is not just a service; it is a commitment to protection born from years of serving the nation.",
     contactId: "sandeep",
-    portrait: null,
+    portrait: { src: "/images/portrait-sandeep.jpg", alt: "Sandeep Beniwal, co-founder of Black Hawk Security Solution, at PRISMA Fest 2026" },
   },
   {
     id: "aryan",
@@ -30,13 +30,19 @@ export const leaders: Leader[] = [
     ],
     focusAreas: ["Business development", "Customer communication", "Technology and process improvement", "Organisational planning"],
     contactId: "aryan",
-    portrait: null,
+    portrait: { src: "/images/portrait-aryan.jpg", alt: "Aryan Beniwal, co-founder of Black Hawk Security Solution" },
   },
 ];
 
 export function getLeader(id: Leader["id"]): Leader {
   return leaders.find((l) => l.id === id) as Leader;
 }
+
+export const aboutPhoto = {
+  src: "/images/founders-prisma-2026.jpg",
+  alt: "Sandeep Beniwal and Aryan Beniwal at PRISMA Fest 2026, SRM University, Sonipat",
+  caption: "Sandeep and Aryan Beniwal on site at PRISMA Fest 2026, SRM University, Sonipat.",
+};
 
 export const aboutPage = {
   heading: "The People Behind Black Hawk",
@@ -56,6 +62,6 @@ export const aboutPage = {
   ],
   openDoor: {
     title: "Open-door policy",
-    text: "Communication with our personnel and our clients is ongoing. We encourage feedback on every deployment so that the people posted at your site remain the right match for it, and we would rather hear about a concern early than discover it late. Our office numbers are published, and both partners are reachable directly.",
+    text: "Communication with our personnel and our clients is ongoing. We encourage feedback on every deployment so that the people posted at your site remain the right match for it, and we would rather hear about a concern early than discover it late. Our office numbers are published, and both founders are reachable directly.",
   },
 };

@@ -32,12 +32,12 @@ export function Hero() {
       {/* Imagery */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/guard-street.jpg"
+          src="/images/guard-uniform-gate.jpg"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[70%_20%] opacity-55 grayscale-[35%] lg:object-[60%_center]"
+          className="object-cover object-[62%_38%] opacity-60 lg:object-[68%_40%]"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-black via-brand-black/85 to-brand-black/20" />
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-brand-black/60" />
