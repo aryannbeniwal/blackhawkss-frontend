@@ -44,8 +44,8 @@ export default function AboutPage() {
             </div>
           </Reveal>
         </div>
-        <Reveal delay={0.1} className="lg:col-span-5">
-          <figure className="overflow-hidden rounded-2xl border border-border lg:sticky lg:top-28">
+        <Reveal delay={0.1} className="flex items-center justify-center lg:col-span-5">
+          <figure className="w-full max-w-md overflow-hidden rounded-2xl border border-border">
             <div className="relative aspect-[4/5]">
               <Image src={aboutPhoto.src} alt={aboutPhoto.alt} fill className="object-cover object-[50%_35%]" sizes="(min-width: 1024px) 26rem, 100vw" />
             </div>

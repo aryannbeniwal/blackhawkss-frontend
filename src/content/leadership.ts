@@ -4,7 +4,7 @@ export const leaders: Leader[] = [
   {
     id: "sandeep",
     name: "Sandeep Beniwal",
-    title: "Military Veteran & Security Operations Leader",
+    title: "Military Veteran · Security Operations",
     shortBio:
       "Retired Indian Army serviceman with over 17 years in the Jat Regiment and a former professional wrestler. He sets the operational standard for every Black Hawk deployment.",
     bio: [
@@ -20,7 +20,7 @@ export const leaders: Leader[] = [
   {
     id: "aryan",
     name: "Aryan Beniwal",
-    title: "Technology & Business Development Leader",
+    title: "Technology & Business Development",
     shortBio:
       "B.Tech graduate and a Software Engineer by profession. He runs the business side and the digital operations.",
     bio: [

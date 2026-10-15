@@ -12,7 +12,7 @@ export function LeadershipPreview() {
       <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
         <Reveal className="lg:col-span-5">
           <SectionHeading
-            eyebrow="Leadership"
+            eyebrow="Founders"
             title="The People Behind Black Hawk"
             lead="Military discipline meets modern thinking — united by a commitment to professional security."
           />
