@@ -82,15 +82,16 @@ export const primaryContact = contacts[0];
 export const WHATSAPP_DEFAULT_MESSAGE =
   "Hello Black Hawk Security Solution, I would like to enquire about your security and manpower services. Please contact me regarding my requirements.";
 
+/** `short` is used in the desktop header where space is tight; `label` everywhere else. */
 export const nav = [
-  { href: "/", label: "Home" },
-  { href: "/about", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/industries", label: "Industries" },
-  { href: "/clients", label: "Our Clients" },
-  { href: "/gallery", label: "Gallery" },
-  { href: "/careers", label: "Careers" },
-  { href: "/contact", label: "Contact" },
+  { href: "/", label: "Home", short: "Home" },
+  { href: "/about", label: "About Us", short: "About" },
+  { href: "/services", label: "Services", short: "Services" },
+  { href: "/industries", label: "Industries", short: "Industries" },
+  { href: "/clients", label: "Our Clients", short: "Clients" },
+  { href: "/gallery", label: "Gallery", short: "Gallery" },
+  { href: "/careers", label: "Careers", short: "Careers" },
+  { href: "/contact", label: "Contact", short: "Contact" },
 ] as const;
 
 /** Verified facts that may be shown as numbers. Each has a source. */

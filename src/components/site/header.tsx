@@ -43,11 +43,11 @@ export function Header() {
           : "border-b border-transparent bg-gradient-to-b from-brand-black/80 to-transparent",
       )}
     >
-      <div className="container-x flex h-[4.5rem] items-center justify-between gap-4">
+      <div className="container-x flex h-[4.5rem] items-center justify-between gap-3">
         <Logo size={40} priority />
 
         {/* Desktop nav */}
-        <nav aria-label="Primary" className="hidden items-center gap-1 lg:flex">
+        <nav aria-label="Primary" className="hidden min-w-0 items-center gap-0.5 xl:flex">
           {nav.map((item) =>
             item.href === "/services" ? (
               <div
@@ -62,11 +62,11 @@ export function Header() {
                   aria-haspopup="menu"
                   onClick={() => setServicesOpen((o) => !o)}
                   className={cn(
-                    "link-underline inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2.5 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.12em] transition hover:text-brand-gold focus-visible:ring-2 focus-visible:ring-brand-gold",
+                    "link-underline inline-flex items-center gap-1 whitespace-nowrap rounded-md px-2 py-2 text-[0.74rem] font-semibold uppercase tracking-[0.08em] transition hover:text-brand-gold focus-visible:ring-2 focus-visible:ring-brand-gold",
                     isActive(item.href) ? "text-brand-gold after:scale-x-100" : "text-foreground/85",
                   )}
                 >
-                  {item.label}
+                  {item.short}
                   <ChevronDown className={cn("size-3.5 transition", servicesOpen && "rotate-180")} />
                 </button>
                 {servicesOpen && (
@@ -105,26 +105,26 @@ export function Header() {
                 href={item.href}
                 aria-current={isActive(item.href) ? "page" : undefined}
                 className={cn(
-                  "link-underline whitespace-nowrap rounded-md px-2.5 py-2 text-[0.78rem] font-semibold uppercase tracking-[0.12em] transition hover:text-brand-gold focus-visible:ring-2 focus-visible:ring-brand-gold",
+                  "link-underline whitespace-nowrap rounded-md px-2 py-2 text-[0.74rem] font-semibold uppercase tracking-[0.08em] transition hover:text-brand-gold focus-visible:ring-2 focus-visible:ring-brand-gold",
                   isActive(item.href) ? "text-brand-gold after:scale-x-100" : "text-foreground/85",
                 )}
               >
-                {item.label}
+                {item.short}
               </Link>
             ),
           )}
         </nav>
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           <a
             href={telLink(primaryContact)}
             onClick={() => track("call_click", { placement: "header" })}
-            className="hidden items-center gap-2 whitespace-nowrap rounded-full border border-border px-3.5 py-2 text-sm font-semibold tabular-nums transition hover:border-brand-gold hover:text-brand-gold md:inline-flex lg:hidden xl:inline-flex"
+            className="hidden items-center gap-2 whitespace-nowrap rounded-full border border-border px-3.5 py-2 text-sm font-semibold tabular-nums transition hover:border-brand-gold hover:text-brand-gold md:inline-flex xl:hidden 2xl:inline-flex"
           >
             <Phone className="size-4 text-brand-gold" />
             {primaryContact.display}
           </a>
-          <Button asChild size="lg" className="hidden whitespace-nowrap bg-brand-red font-semibold uppercase tracking-wider text-white hover:bg-brand-red-deep sm:inline-flex">
+          <Button asChild size="lg" className="hidden whitespace-nowrap bg-brand-red px-3.5 font-semibold uppercase tracking-wide text-white hover:bg-brand-red-deep sm:inline-flex">
             <Link href="/quote" onClick={() => track("quote_open", { placement: "header" })}>
               Request a Quote
             </Link>
@@ -133,7 +133,7 @@ export function Header() {
           {/* Mobile menu */}
           <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
             <SheetTrigger asChild>
-              <Button variant="outline" size="icon-lg" className="lg:hidden" aria-label="Open menu">
+              <Button variant="outline" size="icon-lg" className="xl:hidden" aria-label="Open menu">
                 <Menu className="size-5" />
               </Button>
             </SheetTrigger>
