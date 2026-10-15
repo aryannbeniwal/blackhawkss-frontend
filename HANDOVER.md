@@ -32,7 +32,7 @@ Backend `.env.example`: DB (`DB_URL/USER/PASS`, `POSTGRES_*`), `JWT_SECRET` (≥
 ## 5. Integrations still required (owner actions)
 1. **Email**: create a Resend account, add domain `blackhawkss.in` (3 DNS records), put SMTP creds in `.env`. Fallback: Gmail app password for helloblackhawkss@gmail.com (`SMTP_HOST=smtp.gmail.com`, `SMTP_PORT=465`).
 2. **Analytics**: create a GA4 property, set `NEXT_PUBLIC_GA_ID`.
-3. **Google Maps**: confirm the office pin, paste the embed URL into `NEXT_PUBLIC_MAPS_EMBED_URL`.
+3. **Google Maps**: done — the office pin (29.243607, 77.010575, confirmed 2026-10-15) drives the contact-page embed, directions link and LocalBusiness `geo` JSON-LD. `NEXT_PUBLIC_MAPS_EMBED_URL` is only an optional override.
 4. **Photos**: leadership portraits (`leaders[].portrait` in `src/content/leadership.ts`), gallery images via `/admin/gallery`, real site/event photos to replace the two representative AI images in `public/images/`.
 5. **Licence wording** for `/compliance` (number is deliberately not shown).
 6. **Hosting**: Oracle VM, DNS A record, GitHub secrets for the deploy workflow — see `blackhawkss-backend/deploy/README.md`.

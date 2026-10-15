@@ -52,6 +52,8 @@ export function localBusinessJsonLd(extra: Record<string, unknown> = {}) {
       postalCode: site.address.postalCode,
       addressCountry: site.address.country,
     },
+    geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
+    hasMap: site.mapsShareUrl,
     areaServed: [
       { "@type": "State", name: "Haryana" },
       { "@type": "AdministrativeArea", name: "Delhi NCR" },
@@ -73,6 +75,8 @@ export function serviceJsonLd(input: { name: string; description: string; path: 
     description: input.description,
     url: new URL(input.path, SITE_URL).toString(),
     provider: { "@id": `${SITE_URL}/#organization` },
+    geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
+    hasMap: site.mapsShareUrl,
     areaServed: ["Haryana", "Delhi NCR"],
   };
 }

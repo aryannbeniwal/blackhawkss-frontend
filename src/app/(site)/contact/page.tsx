@@ -51,9 +51,14 @@ export default function ContactPage() {
             <div>
               <p className="font-semibold">Office</p>
               <address className="not-italic text-muted-foreground">{site.address.display}</address>
-              <a href={site.mapsSearchUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex items-center gap-1 text-sm text-brand-gold hover:underline">
-                Open in Google Maps <ExternalLink className="size-3.5" />
-              </a>
+              <div className="mt-2 flex flex-wrap gap-4">
+                <a href={site.mapsShareUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-brand-gold underline underline-offset-2">
+                  Open in Google Maps <ExternalLink className="size-3.5" />
+                </a>
+                <a href={site.mapsDirectionsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm text-brand-gold underline underline-offset-2">
+                  Get directions <ExternalLink className="size-3.5" />
+                </a>
+              </div>
             </div>
           </div>
           {site.mapsEmbedUrl ? (

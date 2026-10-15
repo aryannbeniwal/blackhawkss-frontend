@@ -28,11 +28,15 @@ export const site = {
     country: "IN",
     display: "Old Thana Road, Near Anaj Mandi Gate No. 1, Samalkha, Panipat, Haryana – 132101, India",
   },
-  /** Set NEXT_PUBLIC_MAPS_EMBED_URL only after the owners confirm the pin. */
-  mapsEmbedUrl: process.env.NEXT_PUBLIC_MAPS_EMBED_URL ?? null,
-  mapsSearchUrl:
-    "https://www.google.com/maps/search/?api=1&query=" +
-    encodeURIComponent("Black Hawk Security Solution, Old Thana Road, Near Anaj Mandi Gate No. 1, Samalkha, Panipat, Haryana 132101"),
+  /** Office pin confirmed by the owners on 2026-10-15 (https://maps.app.goo.gl/J3yRT1jif6mAP8MG6). */
+  geo: { lat: 29.243607, lng: 77.010575 },
+  mapsShareUrl: "https://maps.app.goo.gl/J3yRT1jif6mAP8MG6",
+  /** Keyless Google Maps embed centred on the confirmed pin; override with NEXT_PUBLIC_MAPS_EMBED_URL if needed. */
+  mapsEmbedUrl:
+    process.env.NEXT_PUBLIC_MAPS_EMBED_URL ??
+    "https://maps.google.com/maps?q=29.243607,77.010575&z=16&hl=en&output=embed",
+  mapsSearchUrl: "https://www.google.com/maps/search/?api=1&query=29.243607,77.010575",
+  mapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=29.243607,77.010575",
 } as const;
 
 export type ContactPerson = {
