@@ -357,7 +357,7 @@ export function QuoteForm({ defaultService, compact = false }: { defaultService?
           <Field data-invalid={fieldState.invalid} orientation="horizontal">
             <Checkbox id="consent" checked={field.value === true} onCheckedChange={(v) => field.onChange(v === true ? true : undefined)} aria-invalid={fieldState.invalid} />
             <div>
-              <FieldLabel htmlFor="consent" className="font-normal">
+              <FieldLabel htmlFor="consent" className="block w-auto font-normal leading-snug">
                 I agree to be contacted by Black Hawk Security Solution about this enquiry and have read the{" "}
                 <Link href="/privacy" className="text-brand-gold underline underline-offset-2">
                   privacy policy
