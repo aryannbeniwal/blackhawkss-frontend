@@ -61,9 +61,9 @@ export default function AboutPage() {
             const contact = contacts.find((c) => c.id === l.contactId);
             return (
               <Reveal key={l.id}>
-                <article className={`grid gap-8 rounded-2xl border border-border bg-brand-black/70 p-7 sm:p-9 lg:grid-cols-12 ${idx % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
-                  <div className="lg:col-span-4">
-                    <div className="relative aspect-[4/5] overflow-hidden rounded-xl bg-brand-steel">
+                <article className={`grid gap-8 rounded-2xl border border-border bg-brand-black/70 p-7 sm:p-9 lg:grid-cols-12 lg:items-center ${idx % 2 ? "lg:[&>*:first-child]:order-2" : ""}`}>
+                  <div className="flex items-center lg:col-span-4">
+                    <div className="relative w-full aspect-[4/5] overflow-hidden rounded-xl bg-brand-steel">
                       {l.portrait ? (
                         <Image src={l.portrait.src} alt={l.portrait.alt} fill className="object-cover" sizes="(min-width: 1024px) 24rem, 100vw" />
                       ) : (
