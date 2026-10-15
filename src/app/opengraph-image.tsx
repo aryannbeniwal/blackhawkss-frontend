@@ -1,15 +1,14 @@
 import { ImageResponse } from "next/og";
-import { readFile } from "node:fs/promises";
-import { join } from "node:path";
 import { site } from "@/content/site";
+import { OG_LOGO_DATA_URI } from "@/lib/og-logo";
 
 export const alt = "Black Hawk Security Solution — Security Built on Discipline. Service Driven by Trust.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function OpenGraphImage() {
-  const logo = await readFile(join(process.cwd(), "public/brand/black-hawk-logo-512.png"));
-  const logoSrc = `data:image/png;base64,${logo.toString("base64")}`;
+  const logoSrc = OG_LOGO_DATA_URI;
+  const strap = `${site.name} · Guards · Bouncers · PSOs · Supervisors · Manpower`;
   return new ImageResponse(
     (
       <div
@@ -33,7 +32,7 @@ export default async function OpenGraphImage() {
           <div style={{ fontSize: 72, fontWeight: 800, lineHeight: 1, marginTop: 8, textTransform: "uppercase", color: "#f5b400" }}>
             Service Driven by Trust.
           </div>
-          <div style={{ fontSize: 26, marginTop: 28, color: "#a1a1aa" }}>{site.name} · Guards · Bouncers · PSOs · Supervisors · Manpower</div>
+          <div style={{ fontSize: 26, marginTop: 28, color: "#a1a1aa" }}>{strap}</div>
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={logoSrc} alt="" width={300} height={357} style={{ width: 300, height: 357 }} />

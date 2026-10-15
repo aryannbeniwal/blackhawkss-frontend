@@ -1,11 +1,12 @@
 import { BadgeCheck, FileText, Landmark, ShieldCheck } from "lucide-react";
 import { CtaBand } from "@/components/site/cta-band";
-import { JsonLd } from "@/components/site/json-ld";
 import { Reveal } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
 import { pageSeo } from "@/content/seo";
 import { site } from "@/content/site";
-import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { buildMetadata } from "@/lib/seo";
+import { PageSeo } from "@/components/site/page-seo";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export const metadata = buildMetadata({ ...pageSeo.compliance, path: "/compliance" });
 
@@ -19,10 +20,11 @@ const items = [
 export default function CompliancePage() {
   return (
     <>
-      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Compliance", path: "/compliance" }])} />
+      <PageSeo name={pageSeo.compliance.title} description={pageSeo.compliance.description} path="/compliance" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Compliance", path: "/compliance" }]} />
       <div className="container-x pb-20 pt-28 sm:pt-36">
         <Reveal>
-          <SectionHeading as="h1" size="xl" eyebrow="Compliance & trust" title="The paperwork behind the deployment" lead="Corporate and institutional buyers ask for these before onboarding a security vendor. Here is what we hold and how to obtain copies." />
+          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Compliance", path: "/compliance" }]} className="mb-5" />
+        <SectionHeading as="h1" size="xl" eyebrow="Compliance & trust" title="The paperwork behind the deployment" lead="Corporate and institutional buyers ask for these before onboarding a security vendor. Here is what we hold and how to obtain copies." />
         </Reveal>
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {items.map((it, i) => (

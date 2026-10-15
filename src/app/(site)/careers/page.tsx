@@ -1,25 +1,27 @@
 import { CheckCircle2, FileText, MessageCircle } from "lucide-react";
 import { ApplicationForm } from "@/components/forms/application-form";
 import { HawkMark } from "@/components/brand/hawk-mark";
-import { JsonLd } from "@/components/site/json-ld";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
 import { careersPage } from "@/content/careers";
 import { pageSeo } from "@/content/seo";
-import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { buildMetadata } from "@/lib/seo";
 import { whatsappLink } from "@/lib/whatsapp";
+import { PageSeo } from "@/components/site/page-seo";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export const metadata = buildMetadata({ ...pageSeo.careers, path: "/careers" });
 
 export default function CareersPage() {
   return (
     <>
-      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Careers", path: "/careers" }])} />
+      <PageSeo name={pageSeo.careers.title} description={pageSeo.careers.description} path="/careers" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Careers", path: "/careers" }]} />
       <section className="relative overflow-hidden bg-brand-black">
         <div className="bg-gold-glow absolute inset-0" aria-hidden />
         <HawkMark className="-right-24 top-6 h-[26rem] w-[26rem] opacity-[0.05]" />
         <div className="container-x relative pb-14 pt-32 sm:pt-40">
-          <SectionHeading as="h1" size="xl" eyebrow="Careers · नौकरी" title={careersPage.heading} lead={careersPage.tagline} />
+          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Careers", path: "/careers" }]} className="mb-5" />
+        <SectionHeading as="h1" size="xl" eyebrow="Careers · नौकरी" title={careersPage.heading} lead={careersPage.tagline} />
           <div className="mt-8 max-w-2xl space-y-4 text-foreground/85">
             {careersPage.intro.map((p, i) => (
               <p key={i} className="leading-relaxed">

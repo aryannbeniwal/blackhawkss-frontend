@@ -40,6 +40,9 @@ Backend `.env.example`: DB (`DB_URL/USER/PASS`, `POSTGRES_*`), `JWT_SECRET` (≥
 5. **Licence wording** for `/compliance` (number is deliberately not shown).
 6. **Hosting**: Oracle VM, DNS A record, GitHub secrets for the deploy workflow — see `blackhawkss-backend/deploy/README.md`.
 
+## 5b. SEO setup
+Per page: unique title/description, merged keywords, canonical, Open Graph (en_IN, image), Twitter card, robots with large image previews, one JSON-LD `@graph` (WebPage, BreadcrumbList, Service/FAQPage/Person as relevant) and a visible breadcrumb trail. Site-wide: WebSite + LocalBusiness/SecurityService with address, geo, contact points, founders. `sitemap.xml`, `robots.txt`, `manifest`, default share image. Owner to-do: add the property in Google Search Console and Bing Webmaster (set `NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION` / `NEXT_PUBLIC_BING_SITE_VERIFICATION` on Vercel, redeploy, verify, then submit `https://blackhawkss.in/sitemap.xml`); create a Google Business Profile for the Samalkha office; add social profile URLs to `social` in `src/content/site.ts` when they exist.
+
 ## 6. Tests performed (actual results)
 - Frontend: `npm run typecheck` ✔ · `npm run lint` ✔ (0 errors, 4 React-Compiler warnings about react-hook-form `watch`) · `npm run build` ✔ (49 routes, static/PPR).
 - Backend: `./gradlew test build` ✔ — 10 tests, 0 failures (context load, enquiry controller incl. honeypot + validation, auth flow, reference-code concurrency).

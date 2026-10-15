@@ -5,14 +5,15 @@ import { notFound } from "next/navigation";
 import { cn } from "cn";
 import { HawkMark } from "@/components/brand/hawk-mark";
 import { CtaBand } from "@/components/site/cta-band";
-import { JsonLd } from "@/components/site/json-ld";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { getService, services } from "@/content/services";
-import { breadcrumbJsonLd, buildMetadata, faqJsonLd, serviceJsonLd } from "@/lib/seo";
+import { buildMetadata, faqNode, serviceNode } from "@/lib/seo";
 import { whatsappLink, whatsappServiceMessage } from "@/lib/whatsapp";
+import { PageSeo } from "@/components/site/page-seo";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export function generateStaticParams() {
   return services.map((s) => ({ slug: s.slug }));
@@ -34,12 +35,13 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
 
   return (
     <>
-      <JsonLd
-        data={[
-          serviceJsonLd({ name: s.title, description: s.seo.description, path: `/services/${s.slug}` }),
-          breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: s.name, path: `/services/${s.slug}` }]),
-          faqJsonLd(s.faqs),
-        ]}
+      <PageSeo
+        name={s.seo.title}
+        description={s.seo.description}
+        path={`/services/${s.slug}`}
+        image={s.image?.src}
+        breadcrumbs={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: s.name, path: `/services/${s.slug}` }]}
+        nodes={[serviceNode({ name: s.title, description: s.seo.description, path: `/services/${s.slug}`, image: s.image?.src }), faqNode(s.faqs, `/services/${s.slug}`)]}
       />
 
       {/* Hero */}
@@ -54,6 +56,7 @@ export default async function ServicePage({ params }: PageProps<"/services/[slug
         {!s.image && !support && <div className="bg-red-glow absolute inset-0" aria-hidden />}
         <HawkMark className="-right-24 top-10 h-[28rem] w-[28rem] opacity-[0.05]" tone={support ? "red" : "gold"} />
         <div className="container-x relative pb-16 pt-32 sm:pb-20 sm:pt-40">
+          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: s.name, path: `/services/${s.slug}` }]} className={cn("mb-5", support && "text-brand-black/60")} />
           <p className="eyebrow">
             <s.icon className="size-4" /> {support ? "Support staffing" : "Core security service"}
           </p>

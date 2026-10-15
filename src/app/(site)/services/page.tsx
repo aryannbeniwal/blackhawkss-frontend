@@ -1,11 +1,12 @@
-import { JsonLd } from "@/components/site/json-ld";
 import { CtaBand } from "@/components/site/cta-band";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
 import { ServiceCard } from "@/components/site/service-card";
 import { pageSeo } from "@/content/seo";
 import { services } from "@/content/services";
-import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { buildMetadata } from "@/lib/seo";
+import { PageSeo } from "@/components/site/page-seo";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export const metadata = buildMetadata({ ...pageSeo.services, path: "/services" });
 
@@ -14,10 +15,11 @@ export default function ServicesPage() {
   const support = services.filter((s) => s.tone === "support");
   return (
     <>
-      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }])} />
+      <PageSeo name={pageSeo.services.title} description={pageSeo.services.description} path="/services" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]} />
       <div className="container-x pt-28 sm:pt-36">
         <Reveal>
-          <SectionHeading as="h1" size="xl" eyebrow="Services" title="Security & manpower services" lead="Every assignment starts with a conversation about the site, the event or the role. These are the services we currently accept." />
+          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Services", path: "/services" }]} className="mb-5" />
+        <SectionHeading as="h1" size="xl" eyebrow="Services" title="Security & manpower services" lead="Every assignment starts with a conversation about the site, the event or the role. These are the services we currently accept." />
         </Reveal>
         <RevealGroup className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {core.map((s, i) => (

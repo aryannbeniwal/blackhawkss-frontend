@@ -39,6 +39,17 @@ export const site = {
   mapsDirectionsUrl: "https://www.google.com/maps/dir/?api=1&destination=29.243607,77.010575",
 } as const;
 
+/** Public social profiles. Add real URLs when the pages exist; empty entries are omitted from structured data. */
+export const social: readonly string[] = [
+  // "https://www.instagram.com/blackhawkss.in",
+  // "https://www.facebook.com/blackhawkss.in",
+  // "https://www.linkedin.com/company/blackhawkss",
+];
+/** Twitter/X handle without @, or null. */
+export const twitterHandle: string | null = null;
+
+export const OG_IMAGE = { url: "/og-default.png", width: 1200, height: 630, alt: "Black Hawk Security Solution — Security Built on Discipline. Service Driven by Trust." } as const;
+
 export type ContactPerson = {
   id: "office" | "sandeep" | "aryan";
   label: string;

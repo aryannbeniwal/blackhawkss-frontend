@@ -2,7 +2,7 @@ import { Footer } from "@/components/site/footer";
 import { Header } from "@/components/site/header";
 import { JsonLd } from "@/components/site/json-ld";
 import { FloatingActions } from "@/components/site/whatsapp-fab";
-import { localBusinessJsonLd } from "@/lib/seo";
+import { graph, organizationNode, webSiteNode } from "@/lib/seo";
 
 export default function SiteLayout({ children }: LayoutProps<"/">) {
   return (
@@ -19,7 +19,7 @@ export default function SiteLayout({ children }: LayoutProps<"/">) {
       </main>
       <Footer />
       <FloatingActions />
-      <JsonLd data={localBusinessJsonLd()} />
+      <JsonLd data={graph(webSiteNode(), organizationNode())} />
     </>
   );
 }

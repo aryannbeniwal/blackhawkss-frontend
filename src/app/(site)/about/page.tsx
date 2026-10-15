@@ -3,25 +3,34 @@ import { Phone } from "lucide-react";
 import { HawkMark } from "@/components/brand/hawk-mark";
 import { ClawMark } from "@/components/brand/claw-mark";
 import { CtaBand } from "@/components/site/cta-band";
-import { JsonLd } from "@/components/site/json-ld";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
 import { aboutPage, aboutPhoto, leaders } from "@/content/leadership";
 import { pageSeo } from "@/content/seo";
 import { contacts } from "@/content/site";
-import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { buildMetadata, personNode } from "@/lib/seo";
 import { telLink } from "@/lib/whatsapp";
+import { PageSeo } from "@/components/site/page-seo";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
-export const metadata = buildMetadata({ ...pageSeo.about, path: "/about" });
+export const metadata = buildMetadata({ ...pageSeo.about, path: "/about", image: aboutPhoto.src });
 
 export default function AboutPage() {
   return (
     <>
-      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "About Us", path: "/about" }])} />
+      <PageSeo
+        name={pageSeo.about.title}
+        description={pageSeo.about.description}
+        path="/about"
+        image={aboutPhoto.src}
+        breadcrumbs={[{ name: "Home", path: "/" }, { name: "About Us", path: "/about" }]}
+        nodes={leaders.map((l) => personNode({ id: l.id, name: l.name, jobTitle: l.title, description: l.shortBio, image: l.portrait?.src }))}
+      />
       <section className="relative overflow-hidden bg-brand-black">
         <div className="bg-red-glow absolute inset-0" aria-hidden />
         <HawkMark className="-left-28 top-10 h-[30rem] w-[30rem] opacity-[0.05]" />
         <div className="container-x relative pb-16 pt-32 sm:pt-40">
+          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "About Us", path: "/about" }]} className="mb-5" />
           <SectionHeading as="h1" size="xl" eyebrow="About us" title={aboutPage.heading} lead={aboutPage.tagline} />
         </div>
       </section>

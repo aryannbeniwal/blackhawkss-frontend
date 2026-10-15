@@ -1,19 +1,21 @@
 import { ExternalLink, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
 import { ContactForm } from "@/components/forms/contact-form";
-import { JsonLd } from "@/components/site/json-ld";
 import { SectionHeading } from "@/components/site/section-heading";
 import { pageSeo } from "@/content/seo";
 import { contacts, site } from "@/content/site";
-import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { buildMetadata } from "@/lib/seo";
 import { mailtoLink, telLink, whatsappLink } from "@/lib/whatsapp";
+import { PageSeo } from "@/components/site/page-seo";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export const metadata = buildMetadata({ ...pageSeo.contact, path: "/contact" });
 
 export default function ContactPage() {
   return (
     <div className="container-x pb-24 pt-28 sm:pt-36">
-      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }])} />
-      <SectionHeading as="h1" size="xl" eyebrow="Contact us" title="Reach the team directly" lead="Call, WhatsApp or write to us. For a deployment or event, the quote form gives us everything we need to respond quickly." />
+      <PageSeo name={pageSeo.contact.title} description={pageSeo.contact.description} path="/contact" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} />
+      <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]} className="mb-5" />
+        <SectionHeading as="h1" size="xl" eyebrow="Contact us" title="Reach the team directly" lead="Call, WhatsApp or write to us. For a deployment or event, the quote form gives us everything we need to respond quickly." />
 
       <div className="mt-12 grid gap-5 md:grid-cols-3">
         {contacts.map((c) => (

@@ -6,6 +6,7 @@ import { pageSeo } from "@/content/seo";
 import { serviceCategoryOptions } from "@/content/services";
 import type { ServiceCategory } from "@/content/types";
 import { buildMetadata } from "@/lib/seo";
+import { PageSeo } from "@/components/site/page-seo";
 
 export const metadata = buildMetadata({ ...pageSeo.quote, path: "/quote" });
 

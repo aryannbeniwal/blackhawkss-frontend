@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { HawkMark } from "@/components/brand/hawk-mark";
 import { CtaBand } from "@/components/site/cta-band";
-import { JsonLd } from "@/components/site/json-ld";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
 import { ServiceCard } from "@/components/site/service-card";
@@ -14,7 +13,9 @@ import { cities, getCity } from "@/content/cities";
 import { clientsByName } from "@/content/clients";
 import { getService } from "@/content/services";
 import { site } from "@/content/site";
-import { breadcrumbJsonLd, buildMetadata, faqJsonLd, localBusinessJsonLd } from "@/lib/seo";
+import { buildMetadata, faqNode, serviceNode } from "@/lib/seo";
+import { PageSeo } from "@/components/site/page-seo";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export function generateStaticParams() {
   return cities.map((c) => ({ city: c.slug }));
@@ -36,11 +37,14 @@ export default async function CityPage({ params }: PageProps<"/security-services
 
   return (
     <>
-      <JsonLd
-        data={[
-          localBusinessJsonLd({ areaServed: [{ "@type": "City", name: c.name }], url: `${process.env.NEXT_PUBLIC_SITE_URL ?? "https://blackhawkss.in"}/security-services-in/${c.slug}` }),
-          breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: `Security services in ${c.name}`, path: `/security-services-in/${c.slug}` }]),
-          faqJsonLd(c.faqs),
+      <PageSeo
+        name={c.seo.title}
+        description={c.seo.description}
+        path={`/security-services-in/${c.slug}`}
+        breadcrumbs={[{ name: "Home", path: "/" }, { name: `Security services in ${c.name}`, path: `/security-services-in/${c.slug}` }]}
+        nodes={[
+          serviceNode({ name: `Security services in ${c.name}`, description: c.seo.description, path: `/security-services-in/${c.slug}`, areaServed: [c.name, c.state] }),
+          faqNode(c.faqs, `/security-services-in/${c.slug}`),
         ]}
       />
       <section className="relative overflow-hidden bg-brand-black">
@@ -48,6 +52,7 @@ export default async function CityPage({ params }: PageProps<"/security-services
         <HawkMark className="-right-24 top-6 h-[26rem] w-[26rem] opacity-[0.05]" />
         <div className="container-x relative grid gap-10 pb-16 pt-32 sm:pt-40 lg:grid-cols-12 lg:items-center">
           <div className="lg:col-span-7">
+            <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: c.name, path: `/security-services-in/${c.slug}` }]} className="mb-5" />
             <p className="eyebrow">
               <MapPin className="size-4" /> {c.name}, {c.state}
             </p>

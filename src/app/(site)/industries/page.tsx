@@ -1,23 +1,25 @@
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { CtaBand } from "@/components/site/cta-band";
-import { JsonLd } from "@/components/site/json-ld";
 import { Reveal } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
 import { industries } from "@/content/industries";
 import { pageSeo } from "@/content/seo";
 import { getService } from "@/content/services";
-import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { buildMetadata } from "@/lib/seo";
+import { PageSeo } from "@/components/site/page-seo";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export const metadata = buildMetadata({ ...pageSeo.industries, path: "/industries" });
 
 export default function IndustriesPage() {
   return (
     <>
-      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Industries", path: "/industries" }])} />
+      <PageSeo name={pageSeo.industries.title} description={pageSeo.industries.description} path="/industries" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Industries", path: "/industries" }]} />
       <div className="container-x pt-28 sm:pt-36">
         <Reveal>
-          <SectionHeading as="h1" size="xl" eyebrow="Industries we serve" title="Security planned around how your premises work" lead="Each sector brings its own access points, timings and risks. We discuss them before proposing a deployment." />
+          <Breadcrumbs items={[{ name: "Home", path: "/" }, { name: "Industries", path: "/industries" }]} className="mb-5" />
+        <SectionHeading as="h1" size="xl" eyebrow="Industries we serve" title="Security planned around how your premises work" lead="Each sector brings its own access points, timings and risks. We discuss them before proposing a deployment." />
         </Reveal>
         <div className="mt-14 space-y-6 pb-20">
           {industries.map((ind, i) => (

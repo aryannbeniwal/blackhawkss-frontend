@@ -1,12 +1,13 @@
 import { MapPin } from "lucide-react";
 import { ProjectHighlight } from "@/components/home/project-highlight";
 import { CtaBand } from "@/components/site/cta-band";
-import { JsonLd } from "@/components/site/json-ld";
 import { Reveal, RevealGroup, RevealItem } from "@/components/site/reveal";
 import { SectionHeading } from "@/components/site/section-heading";
 import { clientCount, clientsByCity } from "@/content/clients";
 import { pageSeo } from "@/content/seo";
-import { breadcrumbJsonLd, buildMetadata } from "@/lib/seo";
+import { buildMetadata } from "@/lib/seo";
+import { PageSeo } from "@/components/site/page-seo";
+import { Breadcrumbs } from "@/components/site/breadcrumbs";
 
 export const metadata = buildMetadata({ ...pageSeo.clients, path: "/clients" });
 
@@ -14,7 +15,7 @@ export default function ClientsPage() {
   const grouped = clientsByCity();
   return (
     <>
-      <JsonLd data={breadcrumbJsonLd([{ name: "Home", path: "/" }, { name: "Our Clients", path: "/clients" }])} />
+      <PageSeo name={pageSeo.clients.title} description={pageSeo.clients.description} path="/clients" breadcrumbs={[{ name: "Home", path: "/" }, { name: "Our Clients", path: "/clients" }]} />
       <div className="container-x pt-28 sm:pt-36">
         <Reveal>
           <SectionHeading
